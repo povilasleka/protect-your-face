@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 
-import StoreContext from '~/context/StoreContext'
+import StoreContext from '../../context/StoreContext'
 import LineItem from './LineItem'
 
 const Cart = () => {
   const {
     store: { checkout },
-    
+
   } = useContext(StoreContext)
 
   const handleCheckout = () => {

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import StoreContext from '~/context/StoreContext'
+import StoreContext from '../../../context/StoreContext'
 import { Wrapper } from './styles'
 
 const LineItem = props => {
@@ -20,8 +20,8 @@ const LineItem = props => {
 
   const selectedOptions = line_item.variant.selectedOptions
     ? line_item.variant.selectedOptions.map(
-        option => `${option.name}: ${option.value} `
-      )
+      option => `${option.name}: ${option.value} `
+    )
     : null
 
   const handleRemove = () => {

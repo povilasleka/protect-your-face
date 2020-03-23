@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Client from 'shopify-buy'
 
-import Context from '~/context/StoreContext'
+import Context from '../context/StoreContext'
 
 const client = Client.buildClient({
   storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
@@ -44,6 +44,7 @@ const ContextProvider = ({ children }) => {
         try {
           const checkout = await fetchCheckout(existingCheckoutID)
           // Make sure this cart hasn’t already been purchased.
+          // @ts-ignore
           if (!checkout.completedAt) {
             setCheckoutInState(checkout)
             return
@@ -82,6 +83,7 @@ const ContextProvider = ({ children }) => {
           ]
 
           return client.checkout
+            // @ts-ignore
             .addLineItems(checkoutId, lineItemsToUpdate)
             .then(checkout => {
               updateStore(prevState => {
