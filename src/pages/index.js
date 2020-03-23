@@ -8,7 +8,7 @@ const IndexPage = () => (
   <>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>Shopify store</h1>
-    <p>Lets make some money from <b>quarantine!</b></p><br />
+    <p>Lets make some money from <b>quarantine!😈😈😈</b></p><br />
     <ProductGrid />
   </>
 )
