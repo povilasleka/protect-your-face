@@ -32,6 +32,23 @@ export const MenuLink = styled(Link)`
   }
 `
 
+export const MenuButton = styled.div`
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  @media (max-width: ${breakpoints.s}px){
+    font-size: 1.4rem
+  }
+`
+
 export const CartCounter = styled.span`
   background-color: white;
   color: #663399;

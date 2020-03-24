@@ -7,7 +7,8 @@ import {
 	CartCounter,
 	Container,
 	MenuLink,
-	Wrapper
+	Wrapper,
+	MenuButton
 } from './styles'
 
 const useQuantity = () => {
@@ -17,7 +18,7 @@ const useQuantity = () => {
 	return [total !== 0, total]
 }
 
-const Navigation = ({ siteTitle }) => {
+const Navigation = ({ siteTitle, handleCartClick }) => {
 	const [hasItems, quantity] = useQuantity()
 
 	return (
@@ -26,14 +27,14 @@ const Navigation = ({ siteTitle }) => {
 				<MenuLink to='/'>
 					{siteTitle}
 				</MenuLink>
-				<MenuLink to='/cart' className="btn btn-link">
+				<MenuButton onClick={handleCartClick} className="btn btn-link">
 					<i className="fas fa-shopping-cart"></i>
 					{hasItems &&
 						<CartCounter>
 							{quantity} Item
 						</CartCounter>
 					}
-				</MenuLink>
+				</MenuButton>
 			</Container>
 		</Wrapper>
 	)

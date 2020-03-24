@@ -30,23 +30,20 @@ const LineItem = props => {
 
   return (
     <Wrapper>
-      {variantImage}
-      <p>
-        {line_item.title}
-        {`  `}
-        {line_item.variant.title === !'Default Title'
-          ? line_item.variant.title
-          : ''}
-      </p>
-      {selectedOptions}
-      {line_item.quantity}
-
-      <button onClick={handleRemove} style={{
-        background: 'none',
-        border: 'none',
-        fontSize: '1.2rem',
-        color: '#DC0000'
-      }}><i className="fas fa-trash-alt"></i></button>
+      <tr>
+        <th>{variantImage}</th>
+        <th>{line_item.title}</th>
+        <th>{line_item.quantity} pcs.</th>
+        <th>
+          <button onClick={handleRemove} style={{
+            background: 'none',
+            border: 'none',
+            fontSize: '1.2rem',
+            color: '#DC0000',
+            outline: 'none'
+          }}><i className="fas fa-trash-alt"></i></button>
+        </th>
+      </tr>
     </Wrapper>
   )
 }

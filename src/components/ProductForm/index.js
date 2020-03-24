@@ -3,6 +3,7 @@ import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 
+// @ts-ignore
 import StoreContext from '~/context/StoreContext'
 
 const ProductForm = ({ product }) => {
@@ -98,10 +99,10 @@ const ProductForm = ({ product }) => {
   return (
     <>
       <h3>{price}</h3>
-      {options.map(({ id, name, values }, index) => (
+      {/*options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
           <label htmlFor={name}>{name} </label>
-          <select
+          //*<select
             name={name}
             key={id}
             onChange={event => handleOptionChange(index, event)}
@@ -118,7 +119,7 @@ const ProductForm = ({ product }) => {
           </select>
           <br />
         </React.Fragment>
-      ))}
+      ))*/}
       <label htmlFor="quantity">Quantity </label>
       <input
         type="number"

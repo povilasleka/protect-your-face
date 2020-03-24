@@ -2,17 +2,16 @@ import React from 'react'
 
 import SEO from '../components/seo'
 import ProductGrid from '../components/ProductGrid'
+import Jumbotron from '../components/Jumbotron'
 
 const IndexPage = () => (
   <>
-    <div className="jumbotron jumbotron-fluid">
-      <div className="container">
-        <h1 className="display-4">Protect your face</h1>
-        <p className="lead">
-          KN95 CE Certification Face Mask will keep you safe from viruses!
-                </p>
-      </div>
-    </div>
+    <Jumbotron
+      title="Protect your face"
+      subTitle="KN95 CE Certification Face Mask will keep you safe from viruses!"
+      imageUrl=""
+    />
+
     <div className="container">
       <SEO title="Home" keywords={[`coronavirus`, `covid-19`, `face mask`, `mask`, `antivirus mask`]} />
       <h1>Shopify store</h1>

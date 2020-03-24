@@ -11,3 +11,6 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 // Fontwesome 4
 import "@fortawesome/fontawesome-free/css/all.css"
+
+// TypographyJS
+import "./src/utils/typography"
