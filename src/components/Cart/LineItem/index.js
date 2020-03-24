@@ -40,7 +40,13 @@ const LineItem = props => {
       </p>
       {selectedOptions}
       {line_item.quantity}
-      <button onClick={handleRemove}>Remove</button>
+
+      <button onClick={handleRemove} style={{
+        background: 'none',
+        border: 'none',
+        fontSize: '1.2rem',
+        color: '#DC0000'
+      }}><i className="fas fa-trash-alt"></i></button>
     </Wrapper>
   )
 }

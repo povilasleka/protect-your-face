@@ -5,6 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+
+// Bootstrap 4
 import "bootstrap/dist/css/bootstrap.min.css"
 
+// Fontwesome 4
 import "@fortawesome/fontawesome-free/css/all.css"
