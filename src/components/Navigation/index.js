@@ -22,17 +22,17 @@ const Navigation = ({ siteTitle }) => {
 
 	return (
 		<Wrapper>
-			<Container>
+			<Container className="container">
 				<MenuLink to='/'>
 					{siteTitle}
 				</MenuLink>
-				<MenuLink to='/cart'>
+				<MenuLink to='/cart' className="btn btn-link">
+					<i className="fas fa-shopping-cart"></i>
 					{hasItems &&
 						<CartCounter>
-							{quantity}
+							{quantity} Item
 						</CartCounter>
 					}
-					Cart 🛍
 				</MenuLink>
 			</Container>
 		</Wrapper>

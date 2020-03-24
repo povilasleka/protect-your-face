@@ -5,23 +5,27 @@ import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
   background: rebeccapurple;
-  margin-bottom: 1.45rem;
+
 `
 
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 1.45rem;
-  margin: 0 auto;
-  max-width: 960px;
+  padding: 1rem 1rem;
 `
 
 export const MenuLink = styled(Link)`
   color: white;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  padding: 0;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 
   @media (max-width: ${breakpoints.s}px){
     font-size: 1.4rem
@@ -31,17 +35,16 @@ export const MenuLink = styled(Link)`
 export const CartCounter = styled.span`
   background-color: white;
   color: #663399;
-  border-radius: 20px;
-  padding: 0 10px;
-  font-size: 1.2rem;
+  border-radius: 0px;
+  padding: 0 6px;
+  font-size: .7rem;
   float: right;
-  margin: -10px;
+  margin: 10px;
   z-index: 20;
 `
 
-    
-     
-        
-          
-            
-              
+
+
+
+
+

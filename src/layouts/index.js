@@ -8,12 +8,6 @@ import ContextProvider from '../provider/ContextProvider'
 import { GlobalStyle } from '../utils/styles'
 import Navigation from '../components/Navigation'
 
-const Wrapper = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
-`
-
 const Layout = ({ children }) => {
   return (
     <ContextProvider>
@@ -31,14 +25,24 @@ const Layout = ({ children }) => {
         render={data => (
           <>
             <Navigation siteTitle={data.site.siteMetadata.title} />
-            <Wrapper>
+
+            <div className="jumbotron jumbotron-fluid">
+              <div className="container">
+                <h1 className="display-4">Protect your face</h1>
+                <p className="lead">
+                  KN95 CE Certification Face Mask will keep you safe from viruses!
+                </p>
+              </div>
+            </div>
+
+            <div className="container">
               {children}
               <footer>
                 © {new Date().getFullYear()}, Built with
                 {` `}
                 <a href="https://www.gatsbyjs.org">Gatsby</a>
               </footer>
-            </Wrapper>
+            </div>
           </>
         )}
       />

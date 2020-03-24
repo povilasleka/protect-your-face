@@ -1,14 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import SEO from '../components/seo'
 import ProductGrid from '../components/ProductGrid'
 
 const IndexPage = () => (
   <>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" keywords={[`coronavirus`, `covid-19`, `face mask`, `mask`, `antivirus mask`]} />
     <h1>Shopify store</h1>
-    <p>Lets make some money from <b>quarantine!😈😈😈</b></p><br />
+    <p>Lets make some money out of <b>quarantine!😈😈😈</b></p><br />
     <ProductGrid />
   </>
 )
