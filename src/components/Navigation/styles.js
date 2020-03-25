@@ -19,7 +19,7 @@ export const MenuLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 0;
+  padding: .5rem 0;
 
   &:hover {
     color: black;

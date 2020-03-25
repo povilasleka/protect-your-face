@@ -45,7 +45,7 @@ const LineItem = props => {
           background: 'none',
           border: 'none',
           fontSize: '1.2rem',
-          color: '#DC0000',
+          color: 'whitesmoke',
           outline: 'none'
         }}><i className="fas fa-trash-alt"></i></button>
       </div>

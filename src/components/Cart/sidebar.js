@@ -6,10 +6,13 @@ import LineItem from './LineItem'
 
 const Wrapper = styled.div`
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     width: 26rem;
     height: 100%;
-    background-color: #fff;
+    background-color: #164142;
+    color: whitesmoke;
+    animation: sideslide .5s;
+
     -webkit-box-shadow: -12px 3px 32px -14px rgba(0,0,0,0.4);
     -moz-box-shadow: -12px 3px 32px -14px rgba(0,0,0,0.4);
     box-shadow: -12px 3px 32px -14px rgba(0,0,0,0.4);
@@ -31,10 +34,16 @@ const Wrapper = styled.div`
         border: none;
         outline: none;
         font-size: 1.2rem;
+        color: whitesmoke;
     }
 
-    table {
-        font-weight: normal;
+    @keyframes sideslide {
+        from {
+            right: -26rem;
+        }
+        to {
+            right: 0rem;
+        }
     }
 `;
 
@@ -54,18 +63,20 @@ const CheckoutSidebar = ({ handleCloseClick }) => {
     return (
         <Wrapper>
             <div className="container-fluid">
-                <div className="row top">
+                <div className="row mb-5">
+                    <div className="col top">
                     <h3>Cart</h3>
                     <button className="exit" onClick={handleCloseClick}>
                         <i className="fas fa-times"></i>
                     </button>
+                    </div>
                 </div>
 
                 <div className="row">
                     {line_items}
                 </div>
 
-                <div className="row">
+                <div className="row mt-5">
                     <div className="col">
                         <div className="card text-white bg-secondary mb-3">
                             <div className="card-body">

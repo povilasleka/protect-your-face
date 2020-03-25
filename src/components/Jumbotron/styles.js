@@ -1,16 +1,16 @@
 import styled from '@emotion/styled'
-import { graphql } from 'gatsby'
-
 
 export const Wrapper = styled.div`
     background-image: url('https://image.shutterstock.com/z/stock-photo-as-part-of-the-operations-of-a-coronavirus-mobile-testing-unit-a-healthcare-worker-dressed-in-full-1675328320.jpg');
     background-size: cover;
     height: 500px;
 
+
     .container {
         position: relative;
+        margin-top: 25px;
         top: 50%;
-        transform: translateY(-25%);
+        transform: translateY(-50%);
     }
 
     h1, p {

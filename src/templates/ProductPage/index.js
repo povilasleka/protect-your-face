@@ -22,7 +22,7 @@ const ProductPage = ({ data }) => {
       <SEO title={product.title} description={product.description} />
       <Container>
         <TwoColumnGrid>
-          <GridLeft>
+          <GridLeft style={{ marginTop: '100px' }}>
             {product.images.map(image => (
               <Img
                 fluid={image.localFile.childImageSharp.fluid}
