@@ -61,12 +61,8 @@ const CheckoutSidebar = ({ handleCloseClick }) => {
                     </button>
                 </div>
 
-                <div className="row col">
-                    <table>
-                        <tbody>
-                            {line_items}
-                        </tbody>
-                    </table>
+                <div className="row">
+                    {line_items}
                 </div>
 
                 <div className="row">
