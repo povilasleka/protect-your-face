@@ -7,7 +7,7 @@ import LineItem from './LineItem'
 const Wrapper = styled.div`
     position: fixed;
     z-index: 100;
-    width: 30%;
+    width: 26rem;
     height: 100%;
     background-color: #fff;
     -webkit-box-shadow: -12px 3px 32px -14px rgba(0,0,0,0.4);
@@ -70,16 +70,16 @@ const CheckoutSidebar = ({ handleCloseClick }) => {
                         <div className="card text-white bg-secondary mb-3">
                             <div className="card-body">
                                 <h5 className="card-title">Subtotal</h5>
-                                <p className="card-text">$ {checkout.subtotalPrice}</p>
+                                <p className="card-text">{checkout.subtotalPrice} €</p>
                                 <hr />
                                 <h5 className="card-title">Taxes</h5>
-                                <p className="card-text">$ {checkout.totalTax}</p>
+                                <p className="card-text">{checkout.totalTax} €</p>
                             </div>
                         </div>
                         <div className="card text-white bg-success mb-3">
                             <div className="card-body">
                                 <h5 className="card-title">Total</h5>
-                                <p className="card-text">$ {checkout.totalPrice}</p>
+                                <p className="card-text">{checkout.totalPrice} €</p>
                             </div>
                         </div>
                     </div>

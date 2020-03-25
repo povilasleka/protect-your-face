@@ -22,7 +22,7 @@ const Navigation = ({ siteTitle, handleCartClick }) => {
 	const [hasItems, quantity] = useQuantity()
 
 	return (
-		<Wrapper>
+		<Wrapper className="navbar fixed-top">
 			<Container className="container">
 				<MenuLink to='/'>
 					{siteTitle}
