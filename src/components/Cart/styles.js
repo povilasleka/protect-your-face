@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     z-index: 1000;
     width: 26rem;
     height: 100%;
-    background-color: #26272b;
+    background-color: rgb(76, 76, 76);
     color: whitesmoke;
     animation: sideslide .5s;
     right: 0;
