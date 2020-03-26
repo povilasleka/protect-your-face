@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
-  background: rgba(76, 76, 76. 0);
+  background: rgba(255, 255, 255, .8);
   z-index: 10;
 `
 

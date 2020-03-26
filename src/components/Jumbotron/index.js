@@ -14,12 +14,7 @@ const Jumbotron = ({ title, subTitle, imageUrl }) => {
     return (
         <>
         <Wrapper className="jumbotron jumbotron-fluid" imageUrl={imageUrl}>
-            <div style={{
-                position: 'relative',
-                width: '100%',
-                background: 'rgba(76, 76, 76, .5)',
-                height: '100%',
-            }} />
+            <div class="overlay" />
             <div className="container">
                 <h1 className="display-4">{title}</h1>
                 <p className="lead">{subTitle}</p>
@@ -27,20 +22,19 @@ const Jumbotron = ({ title, subTitle, imageUrl }) => {
         </Wrapper>
 
         <div class="jumbotron jumbotron-fluid" style={{
-            padding: '1.8rem 0 1rem 0', 
+            padding: '1.8rem 0 1rem 0',
             margin: '0',
-            background: 'linear-gradient(90deg, rgba(241,81,127,1) 0%, rgba(230,131,79,1) 100%)'
+            background: 'linear-gradient(90deg, rgba(241,81,127,1) 0%, rgba(230,131,79,1) 100%)',
+            transform: 'translateY(-5rem)'
         }}>
             <div class="container" style={{
                 color: 'whitesmoke'
             }}>
                 <div className="row">
-                    <div className="col-md-1">
-                        <i className="far fa-clock" style={{
-                            fontSize: '4.5rem'
-                        }}></i>
+                    <div className="col-md-1 col-sm-12">
+                        <i className="far fa-clock" style={{fontSize: '4.5rem'}}></i>
                     </div>
-                    <div className="col">
+                    <div className="col-md-11 col-sm-12">
                     <h2>Limited time offer! </h2>
                     <p class="lead">Free shipping in EU until {months[date().getMonth()] + ` ` + date().getUTCDate() + `th`}</p>
                     </div>

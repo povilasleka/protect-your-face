@@ -3,7 +3,7 @@ import { SFooter } from './styles'
 import useSiteMetadata from '../../hooks/use-sitemetadata'
 
 const Footer = () => {
-    const { title, description, author, authorWebsite } = useSiteMetadata();
+    const { title, description, author, footer: { authorWebsite } } = useSiteMetadata();
 
     return (
         <SFooter>

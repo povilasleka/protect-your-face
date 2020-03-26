@@ -2,22 +2,29 @@ import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
     background-image: url('https://image.shutterstock.com/z/stock-photo-as-part-of-the-operations-of-a-coronavirus-mobile-testing-unit-a-healthcare-worker-dressed-in-full-1675328320.jpg');
-
+    background-size: cover;
     @media only screen and (min-width: 576px) {
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
     }
 
-    background-size: cover;
-    height: 400px;
+    height: 500px;
     margin-bottom: 0;
     padding: 0;
 
+    transform: translateY(-5rem);
+
+    .overlay {
+        position: relative;
+        width: 100%;
+        background: rgba(76, 76, 76, .5);
+        height: 100%;
+    }
 
     .container {
         position: relative;
-        transform: translateY(-17rem);
+        transform: translateY(-18rem);
     }
 
     h1, p {
@@ -26,11 +33,9 @@ export const Wrapper = styled.div`
         margin: 0;
     }
 
-    h1 {
-        border-radius: 5px 5px 0 0;
-    }
-
-    p {
-        border-radius: 0 5px 5px 5px;
+    @media only screen and (max-width: 576px) {
+        h1 {
+            font-size: 2rem;
+        }
     }
 `;

@@ -8,7 +8,9 @@ export default () => {
                     title
                     description
                     author
-                    authorWebsite
+                    footer {
+                        authorWebsite
+                    }
                 }
             }
         }
