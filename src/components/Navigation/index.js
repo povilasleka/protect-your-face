@@ -10,6 +10,7 @@ import {
 	Wrapper,
 	MenuButton
 } from './styles'
+import useSiteMetadata from '../../hooks/use-sitemetadata'
 
 const useQuantity = () => {
 	const { store: { checkout } } = useContext(StoreContext)
@@ -18,14 +19,15 @@ const useQuantity = () => {
 	return [total !== 0, total]
 }
 
-const Navigation = ({ siteTitle, handleCartClick }) => {
-	const [hasItems, quantity] = useQuantity()
+const Navigation = ({ handleCartClick }) => {
+	const [hasItems, quantity] = useQuantity();
+	const { title } = useSiteMetadata();
 
 	return (
 		<Wrapper className="navbar fixed-top">
 			<Container className="container">
 				<MenuLink to='/'>
-					{siteTitle}
+					{title}
 				</MenuLink>
 				<MenuButton onClick={handleCartClick} className="btn btn-link">
 					<i className="fas fa-shopping-cart"></i>

@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
-
+import useSiteMetadata from '../hooks/use-sitemetadata'
 
 import ContextProvider from '../provider/ContextProvider'
 
 import { GlobalStyle } from '../utils/styles'
 import Navigation from '../components/Navigation'
-import CheckoutSidebar from '../components/Cart/sidebar'
+import Cart from '../components/Cart/index'
+import Footer from '../components/Footer'
 
 const Layout = ({ children }) => {
   const [isCartOpen, setCartOpen] = useState(false);
@@ -18,31 +18,20 @@ const Layout = ({ children }) => {
   return (
     <ContextProvider>
       <GlobalStyle />
-      <StaticQuery
-        query={graphql`
-          query SiteTitleQuery {
-            site {
-              siteMetadata {
-                title
-              }
-            }
-          }
-        `}
-        render={data => (
-          <>
-            {isCartOpen && <CheckoutSidebar handleCloseClick={closeCart} />}
-            <Navigation siteTitle={data.site.siteMetadata.title} handleCartClick={openCart} />
-            {children}
-            <div className="container">
-              <footer>
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-              </footer>
-            </div>
-          </>
-        )}
-      />
+
+      {isCartOpen && <Cart handleCloseClick={closeCart} />}
+      <Navigation handleCartClick={openCart} />
+      {children}
+      <div className="container">
+        {/*<footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>*/}
+
+      </div>
+      <Footer />
+
     </ContextProvider>
   )
 }

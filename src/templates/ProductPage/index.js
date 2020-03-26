@@ -20,7 +20,7 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <Container>
+      <Container className="container">
         <TwoColumnGrid>
           <GridLeft style={{ marginTop: '100px' }}>
             {product.images.map(image => (
