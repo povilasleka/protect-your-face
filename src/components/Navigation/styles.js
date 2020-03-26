@@ -15,14 +15,14 @@ export const Container = styled.div`
 `
 
 export const MenuLink = styled(Link)`
-  color: black;
+  color: #26272b;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
   padding: .5rem 0;
 
   &:hover {
-    color: black;
+    color: #26272b;
     text-decoration: none;
   }
 
@@ -32,14 +32,14 @@ export const MenuLink = styled(Link)`
 `
 
 export const MenuButton = styled.div`
-  color: black;
+  color: #26272b;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0;
 
   &:hover {
-    color: black;
+    color: #26272b;
     text-decoration: none;
   }
 
@@ -49,7 +49,7 @@ export const MenuButton = styled.div`
 `
 
 export const CartCounter = styled.span`
-  background-color: black;
+  background-color: #26272b;
   color: #f5f3f0;
   border-radius: 0px;
   padding: 0 6px;

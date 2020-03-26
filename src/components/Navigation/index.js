@@ -24,7 +24,7 @@ const Navigation = ({ handleCartClick }) => {
 	const { title } = useSiteMetadata();
 
 	return (
-		<Wrapper className="navbar fixed-top">
+		<Wrapper className="navbar">
 			<Container className="container">
 				<MenuLink to='/'>
 					{title}

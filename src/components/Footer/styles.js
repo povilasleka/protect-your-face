@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export const SFooter = styled.footer`
     .site-footer {
-        background-color:#26272b;
+        background-color: #26272b;
         padding:45px 0 20px;
         font-size:15px;
         line-height:24px;
@@ -36,8 +36,8 @@ export const SFooter = styled.footer`
     }
 
     .footer-links {
-        padding-left:0;
-        list-style:none
+        list-style:none;
+        margin-left: 0;
     }
 
     .footer-links li {

@@ -24,10 +24,8 @@ const IndexPage = ({ data }) => (
       imageUrl={data.file.childImageSharp.fluid.originalImg}
     />
 
-    <div className="container">
+    <div className="container mt-5">
       <SEO title="Home" keywords={[`coronavirus`, `covid-19`, `face mask`, `mask`, `antivirus mask`]} />
-      <h1>Shopify store</h1>
-      <p>Lets make some money out of <b>quarantine!</b></p><br />
       <ProductGrid />
     </div>
   </>

@@ -3,7 +3,7 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: `Protect Your Face`,
+    title: `shield4face.com`,
     description: `Kick off your next, ecommerce experience with this Gatsby starter. This starter ships with credentials to a shopify demo store so you can try it out immediately.`,
     author: `Povilasl`,
     authorWebsite: 'http://lekweb.studio',
