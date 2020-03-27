@@ -1,40 +1,44 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+// @ts-ignore
 import SEO from '~/components/seo'
+// @ts-ignore
 import ProductForm from '~/components/ProductForm'
 import {
   Img,
   Wrapper,
+  // @ts-ignore
 } from '~/utils/styles'
 import {
   ProductTitle,
   ProductDescription,
 } from './styles'
 
+
 const ProductPage = ({ data }) => {
-  const product = data.shopifyProduct
+  const product = data.shopifyProduct;
   return (
     <>
       <SEO title={product.title} description={product.description} />
       <Wrapper className="container">
         <div className="row">
-            <div className="col-md-6 col-sm-12">
-              {product.images.map(image => (
-                <Img
-                  fluid={image.localFile.childImageSharp.fluid}
-                  key={image.id}
-                  alt={product.title}
-                />
-              ))}
-            </div>
-            <div className="col-md-6 col-sm-12">
-              <h2>{product.title}</h2>
-              <ProductDescription
-                dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+          <div className="col-md-6 col-sm-12">
+            {product.images.map(image => (
+              <Img
+                fluid={image.localFile.childImageSharp.fluid}
+                key={image.id}
+                alt={product.title}
               />
-              <ProductForm product={product} />
-            </div>
+            ))}
+          </div>
+          <div className="col-md-6 col-sm-12">
+            <h2>{product.title}</h2>
+            <ProductDescription
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            />
+            <ProductForm product={product} />
+          </div>
         </div>
       </Wrapper>
     </>

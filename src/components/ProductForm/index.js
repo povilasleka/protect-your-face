@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 // @ts-ignore
 import StoreContext from '~/context/StoreContext'
-import { OutOfStock } from './styles'
+import { OutOfStock, BuyButton } from './styles'
 
 const ProductForm = ({ product }) => {
   const {
@@ -18,8 +18,8 @@ const ProductForm = ({ product }) => {
   const [quantity, setQuantity] = useState(1)
   const {
     addVariantToCart,
-    store: { client, adding },
-  } = useContext(StoreContext)
+    store: { client, adding, checkout },
+  } = useContext(StoreContext);
 
   const productVariant =
     client.product.helpers.variantForOptions(product, variant) || variant
@@ -66,6 +66,11 @@ const ProductForm = ({ product }) => {
 
   const handleAddToCart = () => {
     addVariantToCart(productVariant.shopifyId, quantity)
+  }
+
+  const handleBuyNow = () => {
+    addVariantToCart(productVariant.shopifyId, quantity);
+    window.open(checkout.webUrl);
   }
 
   /* 
@@ -132,13 +137,21 @@ const ProductForm = ({ product }) => {
         value={quantity}
       />
       <br />
-      <button
-        type="submit"
+      <BuyButton
+        type="submit" className="btn btn-primary"
+        disabled={!available || adding}
+        onClick={handleBuyNow}
+      >
+        Buy Now
+      </BuyButton>
+
+      <BuyButton
+        type="submit" className="btn btn-secondary"
         disabled={!available || adding}
         onClick={handleAddToCart}
       >
         Add to Cart
-      </button>
+      </BuyButton>
       {!available && <OutOfStock>This Product is out of Stock!</OutOfStock>}
     </>
   )

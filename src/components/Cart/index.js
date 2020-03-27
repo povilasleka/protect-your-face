@@ -21,35 +21,26 @@ const CheckoutSidebar = ({ handleCloseClick }) => {
     return (
         <Wrapper>
             <div className="container-fluid">
-            
+
                 <div className="row mb-5">
                     <div className="col top">
-                    <h3>Cart</h3>
-                    <button className="exit" onClick={handleCloseClick}>
-                        <i className="fas fa-times"></i>
-                    </button>
+                        <h3>Cart</h3>
+                        <button className="exit" onClick={handleCloseClick}>
+                            <i className="fas fa-times"></i>
+                        </button>
                     </div>
                 </div>
 
                 <div className="row">
                     {line_items.length === 0 && (<div className="col">
-                    Cart is empty
+                        Cart is empty
                     </div>)}
                     {line_items}
                 </div>
 
                 <div className="row mt-5">
                     <div className="col">
-                        <div className="card text-white bg-secondary mb-3">
-                            <div className="card-body">
-                                <h5 className="card-title">Subtotal</h5>
-                                <p className="card-text">{checkout.subtotalPrice} €</p>
-                                <hr />
-                                <h5 className="card-title">Taxes</h5>
-                                <p className="card-text">{checkout.totalTax} €</p>
-                            </div>
-                        </div>
-                        <div className="card text-white bg-success mb-3">
+                        <div className="card text-white bg-success">
                             <div className="card-body">
                                 <h5 className="card-title">Total</h5>
                                 <p className="card-text">{checkout.totalPrice} €</p>
