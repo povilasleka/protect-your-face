@@ -5,14 +5,11 @@ import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
 import {
   Img,
-  Container,
-  TwoColumnGrid,
-  GridLeft,
-  GridRight,
+  Wrapper,
 } from '~/utils/styles'
 import {
   ProductTitle,
-  ProductDescription
+  ProductDescription,
 } from './styles'
 
 const ProductPage = ({ data }) => {
@@ -20,26 +17,26 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <Container className="container">
-        <TwoColumnGrid>
-          <GridLeft style={{ marginTop: '100px' }}>
-            {product.images.map(image => (
-              <Img
-                fluid={image.localFile.childImageSharp.fluid}
-                key={image.id}
-                alt={product.title}
+      <Wrapper className="container">
+        <div className="row">
+            <div className="col-md-6 col-sm-12">
+              {product.images.map(image => (
+                <Img
+                  fluid={image.localFile.childImageSharp.fluid}
+                  key={image.id}
+                  alt={product.title}
+                />
+              ))}
+            </div>
+            <div className="col-md-6 col-sm-12">
+              <h2>{product.title}</h2>
+              <ProductDescription
+                dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
               />
-            ))}
-          </GridLeft>
-          <GridRight>
-            <ProductTitle>{product.title}</ProductTitle>
-            <ProductDescription
-              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-            />
-            <ProductForm product={product} />
-          </GridRight>
-        </TwoColumnGrid>
-      </Container>
+              <ProductForm product={product} />
+            </div>
+        </div>
+      </Wrapper>
     </>
   )
 }

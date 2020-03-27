@@ -18,8 +18,8 @@ const Footer = () => {
                         <div className="col-sm-12 col-md-4">
                             <h6>Quick Links</h6>
                             <ul className="footer-links">
-                            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-                            <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
                     </div>

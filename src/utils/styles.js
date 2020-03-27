@@ -36,31 +36,12 @@ export const Img = styled(Image)`
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
 `
 
-export const Container = styled.div`
-
-`
-
-export const TwoColumnGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2rem 1fr;
-  grid-template-rows: 1auto;
-  grid-template-areas: "left . right";
-
-  @media (max-width: ${breakpoints.l}px){
-    display: block;
-  }
-`
-
-export const GridLeft = styled.div`
-  grid-area: left;
-`
-
-export const GridRight = styled.div`
-  grid-area: right;
-`
+export const Wrapper = styled.div`
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+`;
 
 export const MainContent = styled.main`
   margin-top: 80px;

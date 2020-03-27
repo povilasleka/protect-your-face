@@ -18,11 +18,11 @@ const LineItem = props => {
     />
   ) : null
 
-  const selectedOptions = line_item.variant.selectedOptions
+  /*const selectedOptions = line_item.variant.selectedOptions
     ? line_item.variant.selectedOptions.map(
       option => `${option.name}: ${option.value} `
     )
-    : null
+    : null*/
 
   const handleRemove = () => {
     removeLineItem(client, checkout.id, line_item.id)

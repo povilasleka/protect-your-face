@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import useSiteMetadata from '../hooks/use-sitemetadata'
 
 import ContextProvider from '../provider/ContextProvider'
 

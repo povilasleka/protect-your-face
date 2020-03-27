@@ -21,7 +21,7 @@ const CheckoutSidebar = ({ handleCloseClick }) => {
     return (
         <Wrapper>
             <div className="container-fluid">
-                
+            
                 <div className="row mb-5">
                     <div className="col top">
                     <h3>Cart</h3>
@@ -32,6 +32,9 @@ const CheckoutSidebar = ({ handleCloseClick }) => {
                 </div>
 
                 <div className="row">
+                    {line_items.length === 0 && (<div className="col">
+                    Cart is empty
+                    </div>)}
                     {line_items}
                 </div>
 

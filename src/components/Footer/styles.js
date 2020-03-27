@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const SFooter = styled.footer`
     .site-footer {
         background-color: #26272b;
-        padding:45px 0 20px;
+        padding:80px 0 60px;
         font-size:15px;
         line-height:24px;
         color:#737373;
@@ -15,7 +15,7 @@ export const SFooter = styled.footer`
     }
 
     .site-footer hr.small {
-        margin:20px 0
+        margin:20px 0;
     }
 
     .site-footer h6 {

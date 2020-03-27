@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     z-index: 1000;
     width: 26rem;
     height: 100%;
-    background-color: rgb(76, 76, 76);
+    background-color: rgba(38, 39, 43, .9);
     color: whitesmoke;
     animation: sideslide .5s;
     right: 0;
@@ -36,5 +36,9 @@ export const Wrapper = styled.div`
         to {
             right: 0rem;
         }
+    }
+
+    @media only screen and (max-width: 576px) {
+        width: 100%;
     }
 `;
