@@ -126,8 +126,8 @@ const ProductForm = ({ product }) => {
           <br />
         </React.Fragment>
       ))}
-      <label htmlFor="quantity">Quantity </label>
-      <input
+      <label htmlFor="quantity" style={{ display: 'inline', marginRight: '.5rem' }}>Quantity </label>
+      <input className="form-control"
         type="number"
         id="quantity"
         name="quantity"
@@ -135,6 +135,7 @@ const ProductForm = ({ product }) => {
         step="1"
         onChange={handleQuantityChange}
         value={quantity}
+        style={{ width: '5rem', display: 'inline', height: '2.2rem' }}
       />
       <br />
       <BuyButton

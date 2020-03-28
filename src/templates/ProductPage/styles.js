@@ -11,7 +11,8 @@ export const ProductTitle = styled.h1`
 `
 
 export const ProductDescription = styled.div`
-  margin-top: 40px;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
   font-family: "Helvetica","Helvetica",sans-serif;
   font-weight: 300;
 `
