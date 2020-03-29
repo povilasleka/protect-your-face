@@ -102,16 +102,32 @@ const ProductForm = ({ product }) => {
     style: 'currency',
   }).format(variant.price)
 
+  const oldPrice = Intl.NumberFormat(undefined, {
+    currency: minVariantPrice.currencyCode,
+    minimumFractionDigits: 2,
+    style: 'currency',
+  }).format(variant.compareAtPrice)
+
   return (
     <>
-      <h3>{price}</h3>
+      <div>
+        <h3 style={{
+          display: 'inline',
+          marginRight: '.8rem',
+        }}>{price}</h3>
+        {variant.compareAtPrice > 0 && <h5 style={{
+          display: 'inline',
+          color: 'red',
+          textDecoration: 'line-through',
+        }}>{oldPrice}</h5>}
+      </div>
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
           <label htmlFor={name}>{name} </label>
           <select
             name={name}
             key={id}
-            onChange={event => handleOptionChange(index, event)}
+            onBlur={event => handleOptionChange(index, event)}
           >
             {values.map(value => (
               <option
@@ -182,6 +198,7 @@ ProductForm.propTypes = {
     variants: PropTypes.arrayOf(
       PropTypes.shape({
         availableForSale: PropTypes.bool,
+        compareAtPrice: PropTypes.string,
         id: PropTypes.string,
         price: PropTypes.string,
         title: PropTypes.string,

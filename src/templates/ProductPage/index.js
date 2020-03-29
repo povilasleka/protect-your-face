@@ -11,7 +11,7 @@ import {
   // @ts-ignore
 } from '~/utils/styles'
 import {
-  ProductTitle,
+  //ProductTitle,
   ProductDescription,
 } from './styles'
 
@@ -65,6 +65,7 @@ export const query = graphql`
         title
         price
         availableForSale
+        compareAtPrice
         shopifyId
         selectedOptions {
           name
