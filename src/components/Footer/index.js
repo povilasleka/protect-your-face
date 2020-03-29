@@ -18,8 +18,8 @@ const Footer = () => {
                         <div className="col-sm-12 col-md-4">
                             <h6>Quick Links</h6>
                             <ul className="footer-links">
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
                     </div>
@@ -32,13 +32,6 @@ const Footer = () => {
                                 Copyright © {new Date().getFullYear()} All Rights Reserved by {title}.
                                 Solution by <a href={authorWebsite}>{author}</a>
                             </p>
-                        </div>
-
-                        <div className="col-md-4 col-sm-6 col-xs-12">
-                            <ul className="social-icons">
-                            <li><a className="facebook" href="#"><i className="fab fa-facebook-f"></i></a></li>
-                            <li><a className="twitter" href="#"><i className="fab fa-instagram"></i></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>

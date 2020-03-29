@@ -27,7 +27,7 @@ const Navigation = ({ handleCartClick }) => {
 		<Wrapper className="navbar">
 			<Container className="container">
 				<MenuLink to='/'>
-					{title}
+					<h4>{title}</h4>
 				</MenuLink>
 				<MenuButton onClick={handleCartClick} className="btn btn-link">
 					<i className="fas fa-shopping-cart"></i>

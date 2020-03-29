@@ -12,5 +12,12 @@ export const BuyButton = styled.button`
     border: 0;
     font-weight: bold;
     color: whitesmoke;
-    margin: 1rem 1rem 0rem 0rem;
+    margin-right: 1rem;
+`;
+
+export const QuantityInput = styled.input`
+    box-sizing: border-box;
+    width: 5rem;
+    display: inline; 
+    height: 2.2rem;
 `;

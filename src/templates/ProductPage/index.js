@@ -23,7 +23,7 @@ const ProductPage = ({ data }) => {
       <SEO title={product.title} description={product.description} />
       <Wrapper className="container">
         <div className="row">
-          <div className="col-md-6 col-sm-12">
+          <div className="col-md-5 col-sm-12">
             {product.images.map(image => (
               <Img
                 fluid={image.localFile.childImageSharp.fluid}
@@ -32,7 +32,7 @@ const ProductPage = ({ data }) => {
               />
             ))}
           </div>
-          <div className="col-md-6 col-sm-12">
+          <div className="col-md-7 col-sm-12">
             <h2>{product.title}</h2>
             <ProductForm product={product} />
             <ProductDescription

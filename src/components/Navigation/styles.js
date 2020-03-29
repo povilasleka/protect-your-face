@@ -20,6 +20,7 @@ export const MenuLink = styled(Link)`
   font-size: 1.5rem;
   font-weight: bold;
   padding: .5rem 0;
+  transform: translateY(.3rem);
 
   &:hover {
     color: #26272b;

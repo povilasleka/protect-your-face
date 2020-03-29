@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
+// @ts-ignore
 import StoreContext from '~/context/StoreContext'
 import {
   Grid,
@@ -8,10 +9,11 @@ import {
   Title,
   PriceTag
 } from './styles'
+// @ts-ignore
 import { Img } from '~/utils/styles'
 
 const ProductGrid = () => {
-  const { store: {checkout} } = useContext(StoreContext)
+  const { store: { checkout } } = useContext(StoreContext)
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query {
@@ -58,16 +60,21 @@ const ProductGrid = () => {
     <Grid>
       {allShopifyProduct.edges
         ? allShopifyProduct.edges.map(({ node: { id, handle, title, images: [firstImage], variants: [firstVariant] } }) => (
-          <Product key={id} >
-            <Link to={`/product/${handle}/`}>
-              {firstImage && firstImage.localFile &&
-                (<Img
-                  fluid={firstImage.localFile.childImageSharp.fluid}
-                  alt={handle}
-                />)}
-            </Link>
-            <Title>{title}</Title>
-            <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
+          <Product key={id}>
+            <div className="card">
+              <Link to={`/product/${handle}/`}>
+                {firstImage && firstImage.localFile &&
+                  (<Img className="card-img-top"
+                    fluid={firstImage.localFile.childImageSharp.fluid}
+                    alt={handle}
+                  />)}
+              </Link>
+              <hr />
+              <div className="card-body" style={{ marginTop: 0 }}>
+                <h5 className="card-text">{title}</h5>
+                <p className="card-text">From {getPrice(firstVariant.price)}</p>
+              </div>
+            </div>
           </Product>
         ))
         : <p>No Products found!</p>}

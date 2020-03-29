@@ -22,16 +22,12 @@ export const Product = styled.div`
 export const Title = styled.span`
   font-weight: 300;
   font-size: 1.2rem;
-  text-align: center;
+  text-align: left;
 `
 
 export const PriceTag = styled.span`
   font-weight: 300;
   font-size: 1rem;
-  text-align: center;
+  text-align: left;
   margin-top: 15px;
-
-  :before {
-    content: '- '
-  }
 `

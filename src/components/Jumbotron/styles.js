@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 
     .container {
         position: relative;
-        transform: translateY(-20rem);
+        transform: translate(-.6rem, -20.5rem);
     }
 
     h1, p {
@@ -33,9 +33,29 @@ export const Wrapper = styled.div`
         margin: 0;
     }
 
+    p {
+        font-weight: 400;
+        text-align: justify;
+    }
+
     @media only screen and (max-width: 576px) {
         h1 {
             font-size: 2rem;
         }
+    }
+`;
+
+export const Offer = styled.div`
+    padding: 1.8rem 0 1rem 0;
+    margin: 0;
+    background: linear-gradient(90deg, rgba(241,81,127,1) 0%, rgba(230,131,79,1) 100%);
+    transform: translateY(-5rem);
+
+    .container {
+        color: whitesmoke;
+    }
+
+    .fa-clock {
+        font-size: 4.5rem;
     }
 `;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 // @ts-ignore
 import StoreContext from '~/context/StoreContext'
-import { OutOfStock, BuyButton } from './styles'
+import { OutOfStock, BuyButton, QuantityInput } from './styles'
 
 const ProductForm = ({ product }) => {
   const {
@@ -109,7 +109,7 @@ const ProductForm = ({ product }) => {
   }).format(variant.compareAtPrice)
 
   return (
-    <div className="card">
+    <div className="card mt-4 mb-4">
       <div className="card-body">
         <div className="mb-4">
           <h3 style={{
@@ -143,18 +143,6 @@ const ProductForm = ({ product }) => {
           <br />
         </React.Fragment>
             ))*/}
-        <label htmlFor="quantity" style={{ display: 'inline', marginRight: '.5rem' }}>Quantity </label>
-        <input className="form-control"
-          type="number"
-          id="quantity"
-          name="quantity"
-          min="1"
-          step="1"
-          onChange={handleQuantityChange}
-          value={quantity}
-          style={{ width: '5rem', display: 'inline', height: '2.2rem' }}
-        />
-        <br />
         <BuyButton
           type="submit" className="btn btn-primary"
           disabled={!available || adding}
@@ -170,6 +158,16 @@ const ProductForm = ({ product }) => {
         >
           Add to Cart
       </BuyButton>
+        <label htmlFor="quantity" style={{ display: 'inline', marginRight: '.5rem' }}>Quantity </label>
+        <QuantityInput className="form-control"
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          step="1"
+          onChange={handleQuantityChange}
+          value={quantity}
+        />
         {!available && <OutOfStock>This Product is out of Stock!</OutOfStock>}
       </div>
     </div>
