@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 
     .container {
         position: relative;
-        transform: translateY(-18rem);
+        transform: translateY(-20rem);
     }
 
     h1, p {

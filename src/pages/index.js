@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import SEO from '../components/seo'
 import ProductGrid from '../components/ProductGrid'
@@ -13,14 +14,20 @@ export const query = graphql`
                 }
             }
         }
+        site {
+          siteMetadata {
+            description
+            product
+          }
+        }
     }
 `;
 
 const IndexPage = ({ data }) => (
   <>
     <Jumbotron
-      title="Protect your face"
-      subTitle="KN95 CE Certification Face Mask will keep you safe from viruses!"
+      title={data.site.siteMetadata.product}
+      subTitle={data.site.siteMetadata.description}
       imageUrl={data.file.childImageSharp.fluid.originalImg}
     />
 

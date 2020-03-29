@@ -12,5 +12,5 @@ export const BuyButton = styled.button`
     border: 0;
     font-weight: bold;
     color: whitesmoke;
-    margin: 1rem 1rem 1rem 0rem;
+    margin: 1rem 1rem 0rem 0rem;
 `;

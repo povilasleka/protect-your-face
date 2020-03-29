@@ -109,19 +109,20 @@ const ProductForm = ({ product }) => {
   }).format(variant.compareAtPrice)
 
   return (
-    <>
-      <div>
-        <h3 style={{
-          display: 'inline',
-          marginRight: '.8rem',
-        }}>{price}</h3>
-        {variant.compareAtPrice > 0 && <h5 style={{
-          display: 'inline',
-          color: 'red',
-          textDecoration: 'line-through',
-        }}>{oldPrice}</h5>}
-      </div>
-      {options.map(({ id, name, values }, index) => (
+    <div className="card">
+      <div className="card-body">
+        <div className="mb-4">
+          <h3 style={{
+            display: 'inline',
+            marginRight: '.8rem',
+          }}>{price}</h3>
+          {variant.compareAtPrice > 0 && <h5 style={{
+            display: 'inline',
+            color: 'red',
+            textDecoration: 'line-through',
+          }}>{oldPrice}</h5>}
+        </div>
+        {/*options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
           <label htmlFor={name}>{name} </label>
           <select
@@ -141,36 +142,37 @@ const ProductForm = ({ product }) => {
           </select>
           <br />
         </React.Fragment>
-      ))}
-      <label htmlFor="quantity" style={{ display: 'inline', marginRight: '.5rem' }}>Quantity </label>
-      <input className="form-control"
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-        style={{ width: '5rem', display: 'inline', height: '2.2rem' }}
-      />
-      <br />
-      <BuyButton
-        type="submit" className="btn btn-primary"
-        disabled={!available || adding}
-        onClick={handleBuyNow}
-      >
-        Buy Now
+            ))*/}
+        <label htmlFor="quantity" style={{ display: 'inline', marginRight: '.5rem' }}>Quantity </label>
+        <input className="form-control"
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          step="1"
+          onChange={handleQuantityChange}
+          value={quantity}
+          style={{ width: '5rem', display: 'inline', height: '2.2rem' }}
+        />
+        <br />
+        <BuyButton
+          type="submit" className="btn btn-primary"
+          disabled={!available || adding}
+          onClick={handleBuyNow}
+        >
+          Buy Now
       </BuyButton>
 
-      <BuyButton
-        type="submit" className="btn btn-secondary"
-        disabled={!available || adding}
-        onClick={handleAddToCart}
-      >
-        Add to Cart
+        <BuyButton
+          type="submit" className="btn btn-secondary"
+          disabled={!available || adding}
+          onClick={handleAddToCart}
+        >
+          Add to Cart
       </BuyButton>
-      {!available && <OutOfStock>This Product is out of Stock!</OutOfStock>}
-    </>
+        {!available && <OutOfStock>This Product is out of Stock!</OutOfStock>}
+      </div>
+    </div>
   )
 }
 

@@ -4,7 +4,11 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `shield4face.com`,
-    description: `Kick off your next, ecommerce experience with this Gatsby starter. This starter ships with credentials to a shopify demo store so you can try it out immediately.`,
+    product: `3M Professional Shield`,
+    description: `
+    3M professional shields for the face are engineered to be comfortable, convenient, and functional to keep you safe. Wear it if there is a risk to get infected by a disease or if you might pass it on others. 
+    Faceshield K95 has CE certification, therefore it can be used by healthcare workers, dental providers, veterinary care personnel, laboratory workers, pre-hospital emergency medical providers. 
+    `,
     author: `Povilasleka`,
     footer: {
       authorWebsite: 'http://lekweb.studio',

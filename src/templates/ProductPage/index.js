@@ -34,10 +34,10 @@ const ProductPage = ({ data }) => {
           </div>
           <div className="col-md-6 col-sm-12">
             <h2>{product.title}</h2>
+            <ProductForm product={product} />
             <ProductDescription
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
-            <ProductForm product={product} />
           </div>
         </div>
       </Wrapper>
