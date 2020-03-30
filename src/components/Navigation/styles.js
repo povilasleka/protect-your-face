@@ -40,7 +40,7 @@ export const MenuButton = styled.div`
   padding: 0;
 
   &:hover {
-    color: #26272b;
+    color: whitesmoke;
     text-decoration: none;
   }
 
@@ -50,8 +50,8 @@ export const MenuButton = styled.div`
 `
 
 export const CartCounter = styled.span`
-  background-color: #26272b;
-  color: #f5f3f0;
+  background-color: whitesmoke;
+  color: rgb(66, 122, 244);
   border-radius: 0px;
   padding: 0 6px;
   font-size: .7rem;

@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => (
     />
 
     <div className="container">
-      <SEO title="Home" keywords={[`coronavirus`, `covid-19`, `face mask`, `mask`, `antivirus mask`]} />
+      <SEO title="Home" keywords={[`coronavirus face shield`, `covid-19 mask`, `face shield`, `3m face shield`]} />
       <ProductGrid />
     </div>
   </>

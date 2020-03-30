@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 
 export const SFooter = styled.footer`
+    margin-top: 5rem;
+
     .site-footer {
         background-color: #26272b;
         padding:80px 0 60px;

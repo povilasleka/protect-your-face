@@ -112,15 +112,20 @@ const ProductForm = ({ product }) => {
     <div className="card mt-4 mb-4">
       <div className="card-body">
         <div className="mb-4">
-          <h3 style={{
+          <p style={{
             display: 'inline',
             marginRight: '.8rem',
-          }}>{price}</h3>
-          {variant.compareAtPrice > 0 && <h5 style={{
+            fontSize: '1.5rem',
+            // @ts-ignore
+            fontWeight: '500',
+            lineHeight: '0px'
+          }}>Price: {price}</p>
+          {variant.compareAtPrice > 0 && <p style={{
             display: 'inline',
             color: 'red',
             textDecoration: 'line-through',
-          }}>{oldPrice}</h5>}
+            fontSize: '1.2rem'
+          }}>{oldPrice}</p>}
         </div>
         {/*options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>

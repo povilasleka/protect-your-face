@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 
     .container {
         position: relative;
-        transform: translate(-.6rem, -20.5rem);
+        transform: translate(-.6rem, -19rem);
     }
 
     h1, p {
@@ -41,6 +41,10 @@ export const Wrapper = styled.div`
     @media only screen and (max-width: 576px) {
         h1 {
             font-size: 2rem;
+        }
+
+        .container {
+            transform: translateY(-22rem);
         }
     }
 `;
