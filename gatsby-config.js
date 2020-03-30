@@ -4,6 +4,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `shield4face.com`,
+    seotitle: `Shield4Face 3M face shields`,
     product: `3M Professional Shield`,
     description: `
     3M professional shields for the face are engineered to be comfortable, convenient, and functional to keep you safe. 

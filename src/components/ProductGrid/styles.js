@@ -11,8 +11,6 @@ export const Grid = styled.div`
   @media (max-width: ${breakpoints.s}px){
     grid-template-columns: repeat(1, 1fr);
   }
-
-  margin-bottom: 2rem;
 `
 
 export const Product = styled.div`
