@@ -11,7 +11,7 @@ import {
   // @ts-ignore
 } from '~/utils/styles'
 import {
-  //ProductTitle,
+  ProductTitle,
   ProductDescription,
 } from './styles'
 
@@ -33,7 +33,7 @@ const ProductPage = ({ data }) => {
             ))}
           </div>
           <div className="col-md-7 col-sm-12">
-            <h2>{product.title}</h2>
+            <ProductTitle>{product.title}</ProductTitle>
             <ProductForm product={product} />
             <ProductDescription
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
