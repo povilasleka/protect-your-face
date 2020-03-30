@@ -48,7 +48,8 @@ export const Wrapper = styled.div`
 export const Offer = styled.div`
     padding: 1.8rem 0 1rem 0;
     margin: 0;
-    background: linear-gradient(90deg, rgba(241,81,127,1) 0%, rgba(230,131,79,1) 100%);
+    background: rgb(31,109,189);
+    background: linear-gradient(45deg, rgba(31,109,189,1) 0%, rgba(41,148,255,1) 100%);
     transform: translateY(-5rem);
 
     .container {

@@ -19,15 +19,19 @@ export const Product = styled.div`
   flex-direction: column;
 `
 
-export const Title = styled.span`
-  font-weight: 300;
-  font-size: 1.2rem;
-  text-align: left;
+export const Title = styled.p`
+  font-size: 1.1rem;
+  line-height: 0px;
+  font-weight: 400;
 `
 
-export const PriceTag = styled.span`
-  font-weight: 300;
-  font-size: 1rem;
-  text-align: left;
-  margin-top: 15px;
+export const PriceTag = styled.p`
+  display: inline;
+  color: red;
 `
+
+export const TagSub = styled.p`
+  display: inline;
+  color: limegreen;
+  font-weight: 300;
+`;

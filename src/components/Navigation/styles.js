@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
-  background: rgba(255, 255, 255, .8);
+  background: rgba(66, 122, 244, .8);
   z-index: 10;
 `
 
@@ -15,7 +15,7 @@ export const Container = styled.div`
 `
 
 export const MenuLink = styled(Link)`
-  color: #26272b;
+  color: whitesmoke;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
@@ -23,7 +23,7 @@ export const MenuLink = styled(Link)`
   transform: translateY(.3rem);
 
   &:hover {
-    color: #26272b;
+    color: whitesmoke;
     text-decoration: none;
   }
 
@@ -33,7 +33,7 @@ export const MenuLink = styled(Link)`
 `
 
 export const MenuButton = styled.div`
-  color: #26272b;
+  color: whitesmoke;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;

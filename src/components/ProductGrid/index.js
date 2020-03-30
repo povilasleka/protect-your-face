@@ -7,7 +7,8 @@ import {
   Grid,
   Product,
   Title,
-  PriceTag
+  PriceTag,
+  TagSub
 } from './styles'
 // @ts-ignore
 import { Img } from '~/utils/styles'
@@ -71,8 +72,10 @@ const ProductGrid = () => {
               </Link>
               <hr />
               <div className="card-body" style={{ marginTop: 0 }}>
-                <h5 className="card-text">{title}</h5>
-                <p className="card-text">From {getPrice(firstVariant.price)}</p>
+                <Title className="card-text">{title}</Title>
+                Price:
+                <PriceTag className="card-text"> {getPrice(firstVariant.price)}</PriceTag>
+                <TagSub> + Free Shipping</TagSub>
               </div>
             </div>
           </Product>
