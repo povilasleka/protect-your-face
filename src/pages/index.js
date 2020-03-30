@@ -7,7 +7,7 @@ import Jumbotron from '../components/Jumbotron'
 
 export const query = graphql`
     query {
-        file(relativePath: {eq: "background.jpg"}) {
+        file(relativePath: {eq: "background.png"}) {
             childImageSharp {
                 fluid {
                     originalImg

@@ -13,8 +13,7 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 const Jumbotron = ({ title, subTitle, imageUrl }) => {
     return (
         <>
-            <Wrapper className="jumbotron">
-                <div className="overlay" />
+            <Wrapper className="jumbotron vertical-center">
                 <div className="container">
                     <h1 className="display-4">{title}</h1>
                     <p className="lead">{subTitle}</p>

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import StoreContext from '../../context/StoreContext'
 import {
 	CartCounter,
-	Container,
 	MenuLink,
 	Wrapper,
 	MenuButton
@@ -25,7 +24,7 @@ const Navigation = ({ handleCartClick }) => {
 
 	return (
 		<Wrapper className="navbar">
-			<Container className="container">
+			<div className="container">
 				<MenuLink to='/'>
 					<h4>{title}</h4>
 				</MenuLink>
@@ -37,7 +36,7 @@ const Navigation = ({ handleCartClick }) => {
 						</CartCounter>
 					}
 				</MenuButton>
-			</Container>
+			</div>
 		</Wrapper>
 	)
 }

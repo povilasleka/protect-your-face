@@ -109,25 +109,24 @@ const ProductForm = ({ product }) => {
   }).format(variant.compareAtPrice)
 
   return (
-    <div className="card mt-4 mb-4">
-      <div className="card-body">
-        <div className="mb-4">
-          <p style={{
-            display: 'inline',
-            marginRight: '.8rem',
-            fontSize: '1.5rem',
-            // @ts-ignore
-            fontWeight: '500',
-            lineHeight: '0px'
-          }}>Price: {price}</p>
-          {variant.compareAtPrice > 0 && <p style={{
-            display: 'inline',
-            color: 'red',
-            textDecoration: 'line-through',
-            fontSize: '1.2rem'
-          }}>{oldPrice}</p>}
-        </div>
-        {/*options.map(({ id, name, values }, index) => (
+    <>
+      <div className="mb-4">
+        <p style={{
+          display: 'inline',
+          marginRight: '.8rem',
+          fontSize: '1.5rem',
+          // @ts-ignore
+          fontWeight: '500',
+          lineHeight: '0px'
+        }}>Price: {price}</p>
+        {variant.compareAtPrice > 0 && <p style={{
+          display: 'inline',
+          color: 'red',
+          textDecoration: 'line-through',
+          fontSize: '1.2rem'
+        }}>{oldPrice}</p>}
+      </div>
+      {/*options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
           <label htmlFor={name}>{name} </label>
           <select
@@ -148,34 +147,33 @@ const ProductForm = ({ product }) => {
           <br />
         </React.Fragment>
             ))*/}
-        <BuyButton
-          type="submit" className="btn btn-primary"
-          disabled={!available || adding}
-          onClick={handleBuyNow}
-        >
-          Buy Now
+      <BuyButton
+        type="submit" className="btn btn-primary"
+        disabled={!available || adding}
+        onClick={handleBuyNow}
+      >
+        Buy Now
       </BuyButton>
 
-        <BuyButton
-          type="submit" className="btn btn-secondary"
-          disabled={!available || adding}
-          onClick={handleAddToCart}
-        >
-          Add to Cart
+      <BuyButton
+        type="submit" className="btn btn-secondary"
+        disabled={!available || adding}
+        onClick={handleAddToCart}
+      >
+        Add to Cart
       </BuyButton>
-        <label htmlFor="quantity" style={{ display: 'inline', marginRight: '.5rem' }}>Quantity </label>
-        <QuantityInput className="form-control"
-          type="number"
-          id="quantity"
-          name="quantity"
-          min="1"
-          step="1"
-          onChange={handleQuantityChange}
-          value={quantity}
-        />
-        {!available && <OutOfStock>This Product is out of Stock!</OutOfStock>}
-      </div>
-    </div>
+      <label htmlFor="quantity" style={{ display: 'inline', marginRight: '.5rem' }}>Quantity </label>
+      <QuantityInput className="form-control"
+        type="number"
+        id="quantity"
+        name="quantity"
+        min="1"
+        step="1"
+        onChange={handleQuantityChange}
+        value={quantity}
+      />
+      {!available && <OutOfStock>This Product is out of Stock!</OutOfStock>}
+    </>
   )
 }
 

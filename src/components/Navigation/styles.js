@@ -4,14 +4,7 @@ import { Link } from 'gatsby'
 import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
-  background: rgba(66, 122, 244, .8);
-  z-index: 10;
-`
-
-export const Container = styled.div`
-  justify-content: space-between;
-  align-items: baseline;
-
+  background: #5387F4;
 `
 
 export const MenuLink = styled(Link)`
