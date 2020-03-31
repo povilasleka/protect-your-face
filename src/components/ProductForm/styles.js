@@ -1,23 +1,27 @@
 import styled from '@emotion/styled'
 
 export const OutOfStock = styled.p`
-    margin: 1rem 0;
+    margin-top: .3rem;
     color: red;
-    font-weight: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+`;
+
+export const InStock = styled(OutOfStock)`
+    color: green;
 `;
 
 export const BuyButton = styled.button`
-    border-radius: 5px;
+    border-radius: 3px;
     padding: .4rem 2rem;
     border: 0;
     font-weight: bold;
     color: whitesmoke;
-    margin-right: 1rem;
+    width: 100%;
+    margin-top: .5rem;
 `;
 
 export const QuantityInput = styled.input`
     box-sizing: border-box;
-    width: 5rem;
     display: inline; 
-    height: 2.2rem;
 `;

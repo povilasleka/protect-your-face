@@ -21,14 +21,6 @@ const Layout = ({ children }) => {
       {isCartOpen && <Cart handleCloseClick={closeCart} />}
       <Navigation handleCartClick={openCart} />
       {children}
-      <div className="container">
-        {/*<footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>*/}
-
-      </div>
       <Footer />
 
     </ContextProvider>

@@ -44,13 +44,17 @@ export const MenuButton = styled.div`
 
 export const CartCounter = styled.span`
   background-color: whitesmoke;
-  color: rgb(66, 122, 244);
+  color: black;
   border-radius: 0px;
   padding: 0 6px;
   font-size: .7rem;
   float: right;
   margin: 10px;
   z-index: 20;
+
+  &:hover {
+    background-color: whitesmoke;
+  }
 `
 
 

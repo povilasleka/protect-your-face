@@ -21,7 +21,7 @@ export const Product = styled.div`
 
 export const Title = styled.p`
   font-size: 1.1rem;
-  line-height: 0px;
+  line-height: 1.2rem;
   font-weight: 400;
 `
 

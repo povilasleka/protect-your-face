@@ -23,7 +23,7 @@ const ProductPage = ({ data }) => {
       <SEO title={product.title} description={product.description} />
       <Wrapper className="container">
         <div className="row">
-          <div className="col-md-5 col-sm-12">
+          <div className="col-md-4 col-sm-12">
             {product.images.map(image => (
               <Img
                 fluid={image.localFile.childImageSharp.fluid}
@@ -32,12 +32,16 @@ const ProductPage = ({ data }) => {
               />
             ))}
           </div>
-          <div className="col-md-7 col-sm-12">
+          <div className="col-md-5 col-sm-12">
             <ProductTitle>{product.title}</ProductTitle>
-            <ProductForm product={product} />
             <ProductDescription
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
+          </div>
+          <div className="col-md-3 col-sm-12 card">
+            <div className="card-body">
+              <ProductForm product={product} />
+            </div>
           </div>
         </div>
       </Wrapper>

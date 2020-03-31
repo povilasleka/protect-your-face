@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 // @ts-ignore
 import StoreContext from '~/context/StoreContext'
-import { OutOfStock, BuyButton, QuantityInput } from './styles'
+import { OutOfStock, InStock, BuyButton, QuantityInput } from './styles'
 
 const ProductForm = ({ product }) => {
   const {
@@ -110,7 +110,7 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <div className="mb-4">
+      <div>
         <p style={{
           display: 'inline',
           marginRight: '.8rem',
@@ -118,7 +118,7 @@ const ProductForm = ({ product }) => {
           // @ts-ignore
           fontWeight: '500',
           lineHeight: '0px'
-        }}>Price: {price}</p>
+        }}>{price}</p>
         {variant.compareAtPrice > 0 && <p style={{
           display: 'inline',
           color: 'red',
@@ -147,22 +147,10 @@ const ProductForm = ({ product }) => {
           <br />
         </React.Fragment>
             ))*/}
-      <BuyButton
-        type="submit" className="btn btn-primary"
-        disabled={!available || adding}
-        onClick={handleBuyNow}
-      >
-        Buy Now
-      </BuyButton>
 
-      <BuyButton
-        type="submit" className="btn btn-secondary"
-        disabled={!available || adding}
-        onClick={handleAddToCart}
-      >
-        Add to Cart
-      </BuyButton>
-      <label htmlFor="quantity" style={{ display: 'inline', marginRight: '.5rem' }}>Quantity </label>
+      {!available ? <OutOfStock>This Product is out of Stock!</OutOfStock> : <InStock>In Stock</InStock>}
+      <br />
+      <label htmlFor="quantity">Qty. </label>
       <QuantityInput className="form-control"
         type="number"
         id="quantity"
@@ -172,7 +160,24 @@ const ProductForm = ({ product }) => {
         onChange={handleQuantityChange}
         value={quantity}
       />
-      {!available && <OutOfStock>This Product is out of Stock!</OutOfStock>}
+
+      <BuyButton
+      className="btn btn-success"
+        type="submit"
+        disabled={!available || adding}
+        onClick={handleBuyNow}
+      >
+        Buy Now
+      </BuyButton>
+
+      <BuyButton
+      className="btn btn-secondary"
+        type="submit"
+        disabled={!available || adding}
+        onClick={handleAddToCart}
+      >
+        Add to Cart
+      </BuyButton>
     </>
   )
 }
