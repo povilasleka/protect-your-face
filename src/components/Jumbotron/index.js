@@ -15,9 +15,9 @@ const Jumbotron = ({ title, subTitle, imageUrl }) => {
     return (
         <>
             <Wrapper
-                Tag="jumbotron"
-                fluid={imageUrl} 
-                className="jumbotron vertical-center"
+              Tag="jumbotron"
+              fluid={imageUrl} 
+              className="jumbotron vertical-center"
             >
                 <div className="container">
                     <h1 className="display-4">{title}</h1>

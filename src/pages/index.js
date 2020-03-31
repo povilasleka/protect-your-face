@@ -9,7 +9,7 @@ export const query = graphql`
     query {
       file(relativePath: {eq: "background.png"}) {
         childImageSharp {
-          fluid(maxWidth: 3000, quality: 90) {
+          fluid(maxWidth: 1000, quality: 100) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }

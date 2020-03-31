@@ -3,9 +3,8 @@ import { breakpoints } from '../../utils/styles'
 import BackgroundImage from 'gatsby-background-image'
 
 export const Wrapper = styled(BackgroundImage)`
-
+    background-color: #5387F4;
     background-size: cover;
-
     height: 450px;
     margin-bottom: 0;
     padding: 0;
@@ -26,9 +25,13 @@ export const Wrapper = styled(BackgroundImage)`
     }
 
     @media only screen and (min-width: ${breakpoints.s}px) {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
+        &,
+        &::before,
+        &::after {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     }
 
     @media only screen and (max-width: ${breakpoints.s}px) {
