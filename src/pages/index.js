@@ -33,6 +33,8 @@ const IndexPage = ({ data, location }) => (
     />
 
     <div className="container mb-5 mt-5">
+      <h4>Buy 3M Face Shield</h4>
+
       <ProductGrid />
     </div>
   </>

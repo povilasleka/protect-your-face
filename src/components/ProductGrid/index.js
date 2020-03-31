@@ -8,7 +8,9 @@ import {
   Product,
   Title,
   PriceTag,
-  TagSub
+  TagSub,
+  CardText,
+  CardLink
 } from './styles'
 // @ts-ignore
 import { Img } from '~/utils/styles'
@@ -43,6 +45,7 @@ const ProductGrid = () => {
               }
               variants {
                 price
+                compareAtPrice
               }
             }
           }
@@ -62,22 +65,29 @@ const ProductGrid = () => {
       {allShopifyProduct.edges
         ? allShopifyProduct.edges.map(({ node: { id, handle, title, images: [firstImage], variants: [firstVariant] } }) => (
           <Product key={id}>
-            <div className="card">
-              <Link to={`/product/${handle}/`}>
-                {firstImage && firstImage.localFile &&
-                  (<Img className="card-img-top"
-                    fluid={firstImage.localFile.childImageSharp.fluid}
-                    alt={handle}
-                  />)}
-              </Link>
-              <hr />
-              <div className="card-body" style={{ marginTop: 0 }}>
-                <Title className="card-text">{title}</Title>
-                Price:
-                <PriceTag className="card-text"> {getPrice(firstVariant.price)}</PriceTag>
-                <TagSub> + Free Shipping</TagSub>
+            <CardLink to={`/product/${handle}/`}>
+              <div className="card">
+                  {firstImage && firstImage.localFile &&
+                    (<Img className="card-img-top"
+                      fluid={firstImage.localFile.childImageSharp.fluid}
+                      alt={handle}
+                    />)}
+                <hr />
+                <div className="card-body" style={{ marginTop: 0 }}>
+                  <Title className="card-text">{title}</Title>
+                  <CardText>Price: </CardText>
+                  <PriceTag className="card-text" style={{ textDecoration: 'line-through' }}>{getPrice(firstVariant.compareAtPrice)}</PriceTag>
+                  <br />
+                  <CardText>Promo price: </CardText>
+                  <strong>
+                    <PriceTag className="card-text"> {getPrice(firstVariant.price)}</PriceTag>
+                    <TagSub> + Free Shipping</TagSub>
+                  </strong>
+                  <br />
+                  <CardText>5-10 days delivery to EU.</CardText>
+                </div>
               </div>
-            </div>
+            </CardLink>
           </Product>
         ))
         : <p>No Products found!</p>}

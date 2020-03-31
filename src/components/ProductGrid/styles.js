@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 
 import { breakpoints } from '../../utils/styles'
 
@@ -23,6 +24,11 @@ export const Title = styled.p`
   font-size: 1.1rem;
   line-height: 1.2rem;
   font-weight: 400;
+  color: black;
+
+  &:hover {
+    color: black;
+  }
 `
 
 export const PriceTag = styled.p`
@@ -32,6 +38,16 @@ export const PriceTag = styled.p`
 
 export const TagSub = styled.p`
   display: inline;
-  color: limegreen;
-  font-weight: 300;
+  color: green;
+`;
+
+export const CardText = styled.p`
+  color: grey;
+  display: inline;
+`;
+
+export const CardLink = styled(Link)`
+  &:hover {
+    text-decoration: none;
+  }
 `;

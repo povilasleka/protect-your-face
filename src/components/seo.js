@@ -9,10 +9,9 @@ function SEO({ description, lang, meta, keywords, title, pathName }) {
 
   const metaDescription = description || data.description
 
-
-  const canonical = pathName
-  ? `${data.siteUrl}`
-  : null
+  //const canonical = pathName
+  //? `${data.siteUrl}`
+  //: null
 
   return (
     <Helmet
@@ -21,16 +20,6 @@ function SEO({ description, lang, meta, keywords, title, pathName }) {
       }}
       title={title}
       titleTemplate={`%s | ${data.seotitle} `}
-      link={
-        canonical
-        ? [
-          {
-            rel: "canonical",
-            href: canonical
-          },
-        ]
-        : []
-      }
       meta={[
         {
           name: `description`,
