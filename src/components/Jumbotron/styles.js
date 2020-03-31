@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 import { breakpoints } from '../../utils/styles'
+import BackgroundImage from 'gatsby-background-image'
 
-export const Wrapper = styled.div`
-    background-image: url('https://i.postimg.cc/cCmtXxnf/background.png');
+export const Wrapper = styled(BackgroundImage)`
+
     background-size: cover;
 
     height: 450px;

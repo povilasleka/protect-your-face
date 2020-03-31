@@ -7,19 +7,19 @@ import Jumbotron from '../components/Jumbotron'
 
 export const query = graphql`
     query {
-        file(relativePath: {eq: "background.png"}) {
-            childImageSharp {
-                fluid {
-                    originalImg
-                }
-            }
-        }
-        site {
-          siteMetadata {
-            description
-            product
+      file(relativePath: {eq: "background.png"}) {
+        childImageSharp {
+          fluid(maxWidth: 3000, quality: 90) {
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
+      }
+      site {
+        siteMetadata {
+          description
+          product
+        }
+      }
     }
 `;
 
@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => (
     <Jumbotron
       title={data.site.siteMetadata.product}
       subTitle={data.site.siteMetadata.description}
-      imageUrl={data.file.childImageSharp.fluid.originalImg}
+      imageUrl={data.file.childImageSharp.fluid}
     />
 
     <div className="container mb-5 mt-5">

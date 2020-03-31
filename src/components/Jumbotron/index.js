@@ -1,5 +1,6 @@
 import React from 'react'
-import { Wrapper, Offer } from './styles'
+import { Wrapper, Offer, Container } from './styles'
+
 
 const date = () => {
     const date = new Date();
@@ -13,7 +14,11 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 const Jumbotron = ({ title, subTitle, imageUrl }) => {
     return (
         <>
-            <Wrapper className="jumbotron vertical-center">
+            <Wrapper
+                Tag="jumbotron"
+                fluid={imageUrl} 
+                className="jumbotron vertical-center"
+            >
                 <div className="container">
                     <h1 className="display-4">{title}</h1>
                     <p className="lead">{subTitle}</p>
