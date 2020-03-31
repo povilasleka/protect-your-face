@@ -22,15 +22,10 @@ export const SFooter = styled.footer`
         margin:0
     }
 
-    @media (max-width:991px) {
-        .site-footer [class^=col-] {
-            margin-bottom:30px
-        }
-    }
 
     @media (max-width:767px) {
         .site-footer {
-            padding-bottom:0
+            padding-bottom:0;
         }
 
         .site-footer .copyright-text,.site-footer .social-icons {

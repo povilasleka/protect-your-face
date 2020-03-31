@@ -6,6 +6,7 @@ module.exports = {
     title: `shield4face.com`,
     seotitle: `Shield4Face 3M face shields`,
     product: `3M Professional Shield`,
+    siteUrl: `https://shield4face.com/`,
     description: `
     3M professional shields for the face are engineered to be comfortable, convenient, and functional to keep you safe. 
     Wear it if there is a risk to get infected by a disease or if you might pass it on others. 

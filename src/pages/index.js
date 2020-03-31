@@ -23,9 +23,9 @@ export const query = graphql`
     }
 `;
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, location }) => (
   <>
-    <SEO title="Home" keywords={[`coronavirus face shield`, `covid-19 mask`, `face shield`, `3m face shield`]} />
+    <SEO title="Home" keywords={[`coronavirus face shield`, `covid-19 mask`, `face shield`, `3m face shield`]} pathName={location} />
     <Jumbotron
       title={data.site.siteMetadata.product}
       subTitle={data.site.siteMetadata.description}

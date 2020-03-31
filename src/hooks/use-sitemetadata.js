@@ -6,8 +6,11 @@ export default () => {
             site {
                 siteMetadata {
                     title
+                    seotitle
+                    product
                     description
                     author
+                    siteUrl
                     footer {
                         authorWebsite
                     }
