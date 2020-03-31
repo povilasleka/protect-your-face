@@ -25,7 +25,7 @@ export const query = graphql`
 
 const IndexPage = ({ data, location }) => (
   <>
-    <SEO title="Home" keywords={[`coronavirus face shield`, `covid-19 mask`, `face shield`, `3m face shield`]} pathName={location} />
+    <SEO title="Home" keywords={[`coronavirus face shield`, `covid-19 face shield`, `face shield`, `3m face shield`, `3m shield for face`, `123vbzxccz11as341`]} pathName={location} />
     <Jumbotron
       title={data.site.siteMetadata.product}
       subTitle={data.site.siteMetadata.description}
@@ -33,8 +33,6 @@ const IndexPage = ({ data, location }) => (
     />
 
     <div className="container mb-5 mt-5">
-      <h4>Buy 3M Face Shield</h4>
-
       <ProductGrid />
     </div>
   </>

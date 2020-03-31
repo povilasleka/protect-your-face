@@ -32,7 +32,7 @@ const Jumbotron = ({ title, subTitle, imageUrl }) => {
                             <i className="far fa-clock"></i>
                         </div>
                         <div className="col-md-11 col-sm-12">
-                            <h2>Limited time offer! </h2>
+                            <h2>Buy 3M Face Shield NOW!</h2>
                             <p className="lead">Free shipping in EU until {months[date().getMonth()] + ` ` + date().getUTCDate() + `th`}</p>
                         </div>
                     </div>
