@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Cookie from 'universal-cookie'
 
 // @ts-ignore
 import SEO from '~/components/seo'
@@ -15,9 +16,14 @@ import {
   ProductDescription,
 } from './styles'
 
+import useContentParser from '../../hooks/use-contentparser'
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct;
+  const cookies = new Cookie();
+  const localLangDescription = 
+    useContentParser(cookies.get('language'), product.descriptionHtml);
+
   return (
     <>
       <SEO title={product.title} description={product.description} />
@@ -35,7 +41,7 @@ const ProductPage = ({ data }) => {
           <div className="col-md-5 col-sm-12">
             <ProductTitle>{product.title}</ProductTitle>
             <ProductDescription
-              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+              dangerouslySetInnerHTML={{ __html: localLangDescription }}
             />
           </div>
           <div className="col-md-3 col-sm-12 card">

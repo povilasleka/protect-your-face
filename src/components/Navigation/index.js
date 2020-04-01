@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import reduce from 'lodash/reduce'
 import PropTypes from 'prop-types'
 
@@ -10,6 +10,8 @@ import {
 	MenuButton
 } from './styles'
 import useSiteMetadata from '../../hooks/use-sitemetadata'
+
+import LanguageSelect from '../LanguageSelect'
 
 const useQuantity = () => {
 	const { store: { checkout } } = useContext(StoreContext)
@@ -28,6 +30,7 @@ const Navigation = ({ handleCartClick }) => {
 				<MenuLink to='/'>
 					<h4>{title}</h4>
 				</MenuLink>
+				<LanguageSelect />
 				<MenuButton onClick={handleCartClick} className="btn btn-link">
 					<i className="fas fa-shopping-cart"></i>
 					{hasItems &&

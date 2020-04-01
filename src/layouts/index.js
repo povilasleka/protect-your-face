@@ -17,12 +17,12 @@ const Layout = ({ children }) => {
   return (
     <ContextProvider>
       <GlobalStyle />
-
       {isCartOpen && <Cart handleCloseClick={closeCart} />}
-      <Navigation handleCartClick={openCart} />
-      {children}
-      <Footer />
+      <Navigation handleCartClick={openCart}/>
 
+      {children}
+
+      <Footer />
     </ContextProvider>
   )
 }

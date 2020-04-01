@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import ProductGrid from '../components/ProductGrid'
 import Jumbotron from '../components/Jumbotron'
+import useKeywords from '../hooks/use-keywords'
 
 export const query = graphql`
     query {
@@ -23,9 +24,12 @@ export const query = graphql`
     }
 `;
 
-const IndexPage = ({ data, location }) => (
+const IndexPage = ({ data, location }) => {
+  const keywords = useKeywords();
+  
+  return (
   <>
-    <SEO title="Home" keywords={[`coronavirus face shield`, `covid-19 face shield`, `face shield`, `3m face shield`, `3m shield for face`, `123vbzxccz11as341`]} pathName={location} />
+    <SEO title="Home" keywords={keywords.indexPage} pathName={location} />
     <Jumbotron
       title={data.site.siteMetadata.product}
       subTitle={data.site.siteMetadata.description}
@@ -36,6 +40,6 @@ const IndexPage = ({ data, location }) => (
       <ProductGrid />
     </div>
   </>
-)
+)}
 
 export default IndexPage;

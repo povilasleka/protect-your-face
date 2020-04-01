@@ -8,7 +8,7 @@ module.exports = {
     product: `3M Professional Shield`,
     siteUrl: `https://shield4face.com/`,
     description: `
-    3M professional shields for the face are engineered to be comfortable, convenient, and functional to keep you safe. 
+    3M professional shields for the face are engineered to be comfortable, convenient, and functional to keep your face protected. 
     Wear it if there is a risk to get infected by a disease or if you might pass it on others. 
     Faceshield K95 has CE certification.
     `,

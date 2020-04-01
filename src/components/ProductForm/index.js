@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect, useCallback } from 'react'
-import find from 'lodash/find'
-import isEqual from 'lodash/isEqual'
+//import find from 'lodash/find'
+//import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 
 // @ts-ignore
@@ -9,12 +9,12 @@ import { OutOfStock, InStock, BuyButton, QuantityInput } from './styles'
 
 const ProductForm = ({ product }) => {
   const {
-    options,
-    variants,
+    //options,
+    //variants,
     variants: [initialVariant],
     priceRange: { minVariantPrice },
   } = product
-  const [variant, setVariant] = useState({ ...initialVariant })
+  const [variant, /*setVariant*/] = useState({ ...initialVariant })
   const [quantity, setQuantity] = useState(1)
   const {
     addVariantToCart,
@@ -48,7 +48,7 @@ const ProductForm = ({ product }) => {
     setQuantity(target.value)
   }
 
-  const handleOptionChange = (optionIndex, { target }) => {
+  /*const handleOptionChange = (optionIndex, { target }) => {
     const { value } = target
     const currentOptions = [...variant.selectedOptions]
 
@@ -62,7 +62,7 @@ const ProductForm = ({ product }) => {
     )
 
     setVariant({ ...selectedVariant })
-  }
+  }*/
 
   const handleAddToCart = () => {
     addVariantToCart(productVariant.shopifyId, quantity)
@@ -82,7 +82,7 @@ const ProductForm = ({ product }) => {
   wouldn't want to use dropdown styled selector anyways - 
   at least if the have a sense for good design lol.
   */
-  const checkDisabled = (name, value) => {
+  /*const checkDisabled = (name, value) => {
     const match = find(variants, {
       selectedOptions: [
         {
@@ -94,7 +94,7 @@ const ProductForm = ({ product }) => {
     if (match === undefined) return true
     if (match.availableForSale === true) return false
     return true
-  }
+  }*/
 
   const price = Intl.NumberFormat(undefined, {
     currency: minVariantPrice.currencyCode,

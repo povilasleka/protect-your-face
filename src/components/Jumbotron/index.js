@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Offer, Container } from './styles'
+import { Wrapper, Offer } from './styles'
 
 
 const date = () => {
