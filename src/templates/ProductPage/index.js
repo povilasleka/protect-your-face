@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
-import Cookie from 'universal-cookie'
+import StoreContext from '../../context/StoreContext'
 
 // @ts-ignore
 import SEO from '~/components/seo'
@@ -20,9 +20,9 @@ import useContentParser from '../../hooks/use-contentparser'
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct;
-  const cookies = new Cookie();
-  const localLangDescription = 
-    useContentParser(cookies.get('language'), product.descriptionHtml);
+  const { locale } = useContext(StoreContext);
+
+  const localLangDescription = useContentParser(locale, product.descriptionHtml);
 
   return (
     <>

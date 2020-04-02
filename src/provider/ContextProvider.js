@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Client from 'shopify-buy'
 
 import Context from '../context/StoreContext'
+import { changeLocale as intlChangeLocale } from 'gatsby-plugin-intl'
 
 const client = Client.buildClient({
   storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
@@ -18,6 +19,7 @@ const ContextProvider = ({ children }) => {
   }
 
   const [store, updateStore] = useState(initialStoreState)
+  const [locale, updateLocale] = useState('en')
 
   useEffect(() => {
     const initializeCheckout = async () => {
@@ -65,6 +67,7 @@ const ContextProvider = ({ children }) => {
     <Context.Provider
       value={{
         store,
+        locale,
         addVariantToCart: (variantId, quantity) => {
           if (variantId === '' || !quantity) {
             console.error('Both a size and quantity are required.')
@@ -112,6 +115,10 @@ const ContextProvider = ({ children }) => {
                 return { ...prevState, checkout: res }
               })
             })
+        },
+        changeLocale: (locale) => {
+          updateLocale(locale);
+          intlChangeLocale(locale);
         },
       }}
     >

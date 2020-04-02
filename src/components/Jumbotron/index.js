@@ -1,5 +1,6 @@
 import React from 'react'
 import { Wrapper, Offer } from './styles'
+import { useIntl, FormattedMessage } from 'gatsby-plugin-intl'
 
 
 const date = () => {
@@ -11,7 +12,9 @@ const date = () => {
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-const Jumbotron = ({ title, subTitle, imageUrl }) => {
+const Jumbotron = ({ imageUrl }) => {
+    const intl = useIntl();
+
     return (
         <>
             <Wrapper
@@ -20,8 +23,8 @@ const Jumbotron = ({ title, subTitle, imageUrl }) => {
               className="jumbotron vertical-center"
             >
                 <div className="container">
-                    <h1 className="display-4">{title}</h1>
-                    <p className="lead">{subTitle}</p>
+                    <h1 className="display-4"><FormattedMessage id="product" /></h1>
+                    <p className="lead"><FormattedMessage id="description" /></p>
                 </div>
             </Wrapper>
 
@@ -32,8 +35,11 @@ const Jumbotron = ({ title, subTitle, imageUrl }) => {
                             <i className="far fa-clock"></i>
                         </div>
                         <div className="col-md-11 col-sm-12">
-                            <h2>Buy 3M Face Shield NOW!</h2>
-                            <p className="lead">Free shipping in EU until {months[date().getMonth()] + ` ` + date().getUTCDate() + `th`}</p>
+                            <h2><FormattedMessage id="offerHeader" /></h2>
+                            <p className="lead">
+                                <FormattedMessage id="offerText" /> 
+                                {` ` + months[date().getMonth()] + ` ` + date().getUTCDate() + `th`}
+                            </p>
                         </div>
                     </div>
                 </div>

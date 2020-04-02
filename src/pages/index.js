@@ -30,12 +30,7 @@ const IndexPage = ({ data, location }) => {
   return (
   <>
     <SEO title="Home" keywords={keywords.indexPage} pathName={location} />
-    <Jumbotron
-      title={data.site.siteMetadata.product}
-      subTitle={data.site.siteMetadata.description}
-      imageUrl={data.file.childImageSharp.fluid}
-    />
-
+    <Jumbotron imageUrl={data.file.childImageSharp.fluid} />
     <div className="container mb-5 mt-5">
       <ProductGrid />
     </div>

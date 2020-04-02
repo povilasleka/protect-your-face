@@ -4,7 +4,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `shield4face.com`,
-    seotitle: `Shield4Face 3M face shields`,
+    seotitle: `Buy 3M Face Shield from shield4face.com`,
     product: `3M Professional Shield`,
     siteUrl: `https://shield4face.com/`,
     description: `
@@ -83,6 +83,15 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`en`, `it`, `es`, `de`, `fr`],
+        defaultLanguage: `en`,
+        redirect: true
       }
     }
   ],

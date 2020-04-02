@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useIntl, FormattedMessage } from 'gatsby-plugin-intl'
 
 // @ts-ignore
 import StoreContext from '~/context/StoreContext'
@@ -16,6 +17,7 @@ import {
 import { Img } from '~/utils/styles'
 
 const ProductGrid = () => {
+  const intl = useIntl();
   const { store: { checkout } } = useContext(StoreContext)
   const { allShopifyProduct } = useStaticQuery(
     graphql`
@@ -75,16 +77,16 @@ const ProductGrid = () => {
                 <hr />
                 <div className="card-body" style={{ marginTop: 0 }}>
                   <Title className="card-text">{title}</Title>
-                  <CardText>Price: </CardText>
+                  <CardText><FormattedMessage id="cardPrice" /> </CardText>
                   <PriceTag className="card-text" style={{ textDecoration: 'line-through' }}>{getPrice(firstVariant.compareAtPrice)}</PriceTag>
                   <br />
-                  <CardText>Promo price: </CardText>
+                  <CardText><FormattedMessage id="cardPromoPrice" /> </CardText>
                   <strong>
                     <PriceTag className="card-text"> {getPrice(firstVariant.price)}</PriceTag>
-                    <TagSub> + Free Shipping</TagSub>
+                    <TagSub> + {intl.formatMessage({ id: "cardFreeShipping" })} </TagSub>
                   </strong>
                   <br />
-                  <CardText>5-10 days delivery to EU.</CardText>
+                  <CardText><FormattedMessage id="cardTimeOfDelivery" /> </CardText>
                 </div>
               </div>
             </CardLink>
