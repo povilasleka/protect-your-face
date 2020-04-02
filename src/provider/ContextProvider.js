@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Client from 'shopify-buy'
+import Cookie from 'universal-cookie'
 
 import Context from '../context/StoreContext'
 import { changeLocale as intlChangeLocale } from 'gatsby-plugin-intl'
@@ -8,6 +9,7 @@ const client = Client.buildClient({
   storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
   domain: `${process.env.SHOP_NAME}.myshopify.com`,
 })
+
 
 const ContextProvider = ({ children }) => {
   let initialStoreState = {
@@ -19,7 +21,8 @@ const ContextProvider = ({ children }) => {
   }
 
   const [store, updateStore] = useState(initialStoreState)
-  const [locale, updateLocale] = useState('en')
+  const [locale, updateLocale] = useState('undefined')
+  const cookies = new Cookie();
 
   useEffect(() => {
     const initializeCheckout = async () => {
@@ -119,6 +122,7 @@ const ContextProvider = ({ children }) => {
         changeLocale: (locale) => {
           updateLocale(locale);
           intlChangeLocale(locale);
+          cookies.set('locale', locale, { path: '/' });
         },
       }}
     >

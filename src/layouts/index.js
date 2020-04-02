@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 
 import ContextProvider from '../provider/ContextProvider'
@@ -13,6 +13,7 @@ const Layout = ({ children }) => {
 
   const openCart = () => setCartOpen(true);
   const closeCart = () => setCartOpen(false);
+
 
   return (
     <ContextProvider>
