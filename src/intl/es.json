@@ -1,11 +1,15 @@
 {
     "title": "shield4face.com",
-    "product": "3M Face Shield",
-    "description": "Los protectores faciales profesionales 3M están diseñados para ser cómodos, prácticos y funcionales con el fin de mantenerle seguro. Úselos si hay riesgo de infectarse por una enfermedad o si puede contagiar a otros. Faceshield K95 tiene certificación CE",
-    "offerHeader": "Compre el protector facial de 3M!",
+    "product": "Face Shield",
+    "description": "Los protectores faciales profesionales están diseñados para ser cómodos, prácticos y funcionales con el fin de mantenerle seguro. Úselos si hay riesgo de infectarse por una enfermedad o si puede contagiar a otros. Faceshield K95 tiene certificación CE",
+    "offerHeader": "Compre el protector facial de !",
     "offerText": "Envío gratis en la UE hasta",
     "cardPrice": "Precio:",
     "cardPromoPrice": "Promo Precio:",
     "cardFreeShipping": "Envío Gratis",
-    "cardTimeOfDelivery": "Entrega en 5-10 días a la EU"
+    "cardTimeOfDelivery": "Entrega en 5-10 días a la EU",
+    "buyNowButton": "Compra Ahora",
+    "addToCartButton": "Añadir Al Carrito",
+    "inStockLabel": "En Stock",
+    "outOfStockLabel": "Agotado"
 }

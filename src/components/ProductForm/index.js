@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 // @ts-ignore
 import StoreContext from '~/context/StoreContext'
 import { OutOfStock, InStock, BuyButton, QuantityInput } from './styles'
+import { useIntl, FormattedMessage } from 'gatsby-plugin-intl'
 
 const ProductForm = ({ product }) => {
   const {
@@ -108,6 +109,8 @@ const ProductForm = ({ product }) => {
     style: 'currency',
   }).format(variant.compareAtPrice)
 
+  const intl = useIntl();
+
   return (
     <>
       <div>
@@ -148,7 +151,7 @@ const ProductForm = ({ product }) => {
         </React.Fragment>
             ))*/}
 
-      {!available ? <OutOfStock>This Product is out of Stock!</OutOfStock> : <InStock>In Stock</InStock>}
+      {!available ? <OutOfStock><FormattedMessage id="outOfStockLabel" /></OutOfStock> : <InStock><FormattedMessage id="inStockLabel" /></InStock>}
       <br />
       <label htmlFor="quantity">Qty. </label>
       <QuantityInput className="form-control"
@@ -167,7 +170,7 @@ const ProductForm = ({ product }) => {
         disabled={!available || adding}
         onClick={handleBuyNow}
       >
-        Buy Now
+        <FormattedMessage id="buyNowButton" />
       </BuyButton>
 
       <BuyButton
@@ -176,7 +179,7 @@ const ProductForm = ({ product }) => {
         disabled={!available || adding}
         onClick={handleAddToCart}
       >
-        Add to Cart
+        <FormattedMessage id="addToCartButton" />
       </BuyButton>
     </>
   )
