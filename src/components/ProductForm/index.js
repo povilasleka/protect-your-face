@@ -165,7 +165,7 @@ const ProductForm = ({ product }) => {
       />
 
       <BuyButton
-      className="btn btn-success"
+        className="btn btn-success"
         type="submit"
         disabled={!available || adding}
         onClick={handleBuyNow}
@@ -174,7 +174,7 @@ const ProductForm = ({ product }) => {
       </BuyButton>
 
       <BuyButton
-      className="btn btn-secondary"
+        className="btn btn-secondary"
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}

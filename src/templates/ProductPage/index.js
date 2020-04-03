@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import StoreContext from '../../context/StoreContext'
+import { useMediaQuery } from 'react-responsive'
+import useContentParser from '../../hooks/use-contentparser'
 
 // @ts-ignore
 import SEO from '~/components/seo'
@@ -16,11 +18,10 @@ import {
   ProductDescription,
 } from './styles'
 
-import useContentParser from '../../hooks/use-contentparser'
-
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct;
   const { locale } = useContext(StoreContext);
+  const isMobile = useMediaQuery({ maxDeviceWidth: 576 });
 
   const localLangDescription = useContentParser(locale, product.descriptionHtml);
 
@@ -29,7 +30,7 @@ const ProductPage = ({ data }) => {
       <SEO title={product.title} description={product.description} />
       <Wrapper className="container">
         <div className="row">
-          <div className="col-md-4 col-sm-12">
+          {!isMobile ? (<div className="col-md-4 col-sm-12">
             {product.images.map(image => (
               <Img
                 fluid={image.localFile.childImageSharp.fluid}
@@ -37,18 +38,32 @@ const ProductPage = ({ data }) => {
                 alt={product.title}
               />
             ))}
-          </div>
+          </div>) :
+            (<div className="col-md-4 col-sm-12">
+              <Img
+                fluid={product.images[0].localFile.childImageSharp.fluid}
+                key={product.images[0].id}
+                alt={product.title}
+              />
+              <br />
+            </div>)}
           <div className="col-md-5 col-sm-12">
             <ProductTitle>{product.title}</ProductTitle>
+            {isMobile && (<div className="col-md-3 col-sm-12 card">
+              <div className="card-body">
+                <ProductForm product={product} />
+              </div>
+            </div>)}
             <ProductDescription
               dangerouslySetInnerHTML={{ __html: localLangDescription }}
             />
           </div>
-          <div className="col-md-3 col-sm-12 card">
+
+          {!isMobile && (<div className="col-md-3 col-sm-12 card">
             <div className="card-body">
               <ProductForm product={product} />
             </div>
-          </div>
+          </div>)}
         </div>
       </Wrapper>
     </>
