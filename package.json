@@ -12,6 +12,7 @@
     "@emotion/styled": "^10.0.22",
     "@fortawesome/fontawesome-free": "^5.13.0",
     "bootstrap": "^4.4.1",
+    "country-flag-icons": "^1.2.0",
     "gatsby": "^2.17.4",
     "gatsby-background-image": "^1.0.1",
     "gatsby-cli": "^2.11.3",

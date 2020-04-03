@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     p {
         display: inline;
         color: whitesmoke;
-        padding-right: 1rem;
+        padding-right: .5rem;
     }
 `;
 

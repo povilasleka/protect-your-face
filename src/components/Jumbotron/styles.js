@@ -3,7 +3,7 @@ import { breakpoints } from '../../utils/styles'
 import BackgroundImage from 'gatsby-background-image'
 
 export const Wrapper = styled(BackgroundImage)`
-    background-color: #5387F4;
+    background-color: rgb(66, 135, 245);
     background-size: cover;
     height: 450px;
     margin-bottom: 0;

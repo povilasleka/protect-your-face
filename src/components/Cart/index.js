@@ -1,13 +1,21 @@
 import React, { useContext, useState } from 'react'
+import reduce from 'lodash/reduce'
 
 import StoreContext from '../../context/StoreContext'
 import LineItem from './LineItem'
 
 import { Wrapper, ClosedCart } from './styles'
 
+const useQuantity = () => {
+    const { store: { checkout } } = useContext(StoreContext)
+    const items = checkout ? checkout.lineItems : []
+    const total = reduce(items, (acc, item) => acc + item.quantity, 0)
+    return [total !== 0, total]
+}
+
 const CheckoutSidebar = () => {
     const [isCartOpen, setCartStatus] = useState(false);
-
+	const [hasItems, quantity] = useQuantity();
     const {
         store: { checkout },
     } = useContext(StoreContext)
@@ -19,6 +27,12 @@ const CheckoutSidebar = () => {
     const line_items = checkout.lineItems.map(line_item => {
         return <LineItem key={line_item.id.toString()} line_item={line_item} />
     });
+
+    if (!isCartOpen && hasItems) return (
+        <ClosedCart onClick={() => setCartStatus(true)}>
+            <i className="fas fa-shopping-cart"></i>
+        </ClosedCart>
+    );
 
     if (isCartOpen) return (
         <Wrapper>
@@ -69,11 +83,7 @@ const CheckoutSidebar = () => {
         </Wrapper>
     );
 
-    return (
-        <ClosedCart onClick={() => setCartStatus(true)}>
-            <i className="fas fa-shopping-cart"></i>
-        </ClosedCart>
-    );
+    return null;
 }
 
 export default CheckoutSidebar;

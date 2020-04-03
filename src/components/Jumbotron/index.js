@@ -31,9 +31,9 @@ const Jumbotron = ({ imageUrl }) => {
             <Offer className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-1 col-sm-12">
+                        {window.innerWidth > 576 && (<div className="col-md-1 col-sm-12">
                             <i className="far fa-clock"></i>
-                        </div>
+                        </div>)}
                         <div className="col-md-11 col-sm-12">
                             <h2><FormattedMessage id="offerHeader" /></h2>
                             <p className="lead">
