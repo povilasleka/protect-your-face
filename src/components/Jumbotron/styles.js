@@ -50,8 +50,6 @@ export const Offer = styled.div`
     margin: 0;
     background: #5387F4;
 
-
-
     .container {
         color: whitesmoke;
     }

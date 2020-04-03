@@ -1,7 +1,7 @@
 import React from 'react'
 import { Wrapper, Offer } from './styles'
 import { useIntl, FormattedMessage } from 'gatsby-plugin-intl'
-
+import { useMediaQuery } from 'react-responsive'
 
 const date = () => {
     const date = new Date();
@@ -12,15 +12,15 @@ const date = () => {
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-const Jumbotron = ({ imageUrl }) => {
+const Jumbotron = ({ imageUrl, imageUrlMobile }) => {
     const intl = useIntl();
+    const isMobile = useMediaQuery({ maxDeviceWidth: 576 });
 
     return (
         <>
             <Wrapper
-              Tag="jumbotron"
-              fluid={imageUrl} 
-              className="jumbotron vertical-center"
+                fluid={isMobile ? imageUrlMobile : imageUrl}
+                className="jumbotron vertical-center"
             >
                 <div className="container">
                     <h1 className="display-4"><FormattedMessage id="product" /></h1>
@@ -31,13 +31,14 @@ const Jumbotron = ({ imageUrl }) => {
             <Offer className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-1 col-sm-12">
+                        {!isMobile && (<div className="col-md-1 col-sm-12">
                             <i className="far fa-clock"></i>
-                        </div>
+                        </div>)}
+
                         <div className="col-md-11 col-sm-12">
                             <h2><FormattedMessage id="offerHeader" /></h2>
                             <p className="lead">
-                                <FormattedMessage id="offerText" /> 
+                                <FormattedMessage id="offerText" />
                                 {` ` + months[date().getMonth()] + ` ` + date().getUTCDate() + `th`}
                             </p>
                         </div>
