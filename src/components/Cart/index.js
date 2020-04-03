@@ -1,11 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 
 import StoreContext from '../../context/StoreContext'
 import LineItem from './LineItem'
 
-import { Wrapper } from './styles'
+import { Wrapper, ClosedCart } from './styles'
 
-const CheckoutSidebar = ({ handleCloseClick }) => {
+const CheckoutSidebar = () => {
+    const [isCartOpen, setCartStatus] = useState(false);
+
     const {
         store: { checkout },
     } = useContext(StoreContext)
@@ -18,14 +20,14 @@ const CheckoutSidebar = ({ handleCloseClick }) => {
         return <LineItem key={line_item.id.toString()} line_item={line_item} />
     });
 
-    return (
+    if (isCartOpen) return (
         <Wrapper>
             <div className="container-fluid">
 
                 <div className="row mb-5">
                     <div className="col top">
                         <h3>Cart</h3>
-                        <button className="exit" onClick={handleCloseClick}>
+                        <button className="exit" onClick={() => setCartStatus(false)}>
                             <i className="fas fa-times"></i>
                         </button>
                     </div>
@@ -64,7 +66,13 @@ const CheckoutSidebar = ({ handleCloseClick }) => {
                 </div>
 
             </div>
-        </Wrapper >
+        </Wrapper>
+    );
+
+    return (
+        <ClosedCart onClick={() => setCartStatus(true)}>
+            <i className="fas fa-shopping-cart"></i>
+        </ClosedCart>
     );
 }
 

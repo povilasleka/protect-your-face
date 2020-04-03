@@ -42,3 +42,26 @@ export const Wrapper = styled.div`
         width: 100%;
     }
 `;
+
+export const ClosedCart = styled.button`
+    background: none;
+    border: 2px solid rgba(245, 54, 207, .8);
+    font-size: 1.6rem;
+    position: relative;
+    top: 50%;
+    transform: translate(5px, -50%);
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 50%;
+    width: 60px;
+    height: 100px;
+    background-color: rgba(38, 39, 43, .9);
+    border-radius: 5rem 0 0 5rem;
+    padding: .5rem;
+    color: #d9d9d9;
+
+    &:focus {
+        outline: none;
+    }
+`;

@@ -18,8 +18,8 @@ const Layout = ({ children }) => {
   return (
     <ContextProvider>
       <GlobalStyle />
-      {isCartOpen && <Cart handleCloseClick={closeCart} />}
-      <Navigation handleCartClick={openCart}/>
+      <Cart />
+      <Navigation/>
 
       {children}
 
