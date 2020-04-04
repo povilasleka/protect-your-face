@@ -4,7 +4,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `shield4face.com`,
-    seotitle: `Buy 3M Face Shield from shield4face.com`,
+    seotitle: `Buy Face Shield from shield4face.com`,
     product: `3M Professional Shield`,
     siteUrl: `https://shield4face.com/`,
     description: `

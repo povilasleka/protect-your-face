@@ -66,12 +66,13 @@ const ProductForm = ({ product }) => {
   }*/
 
   const handleAddToCart = () => {
-    addVariantToCart(productVariant.shopifyId, quantity)
+    addVariantToCart(productVariant.shopifyId, quantity);
   }
 
   const handleBuyNow = () => {
-    addVariantToCart(productVariant.shopifyId, quantity);
-    window.open(checkout.webUrl);
+    addVariantToCart(productVariant.shopifyId, quantity).then(() => {
+      window.open(checkout.webUrl);
+    });
   }
 
   /* 
