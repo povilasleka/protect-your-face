@@ -18,18 +18,15 @@ const LocaleSelector = () => {
                 <Option value="fr">{getUnicodeFlagIcon('FR') + ` `}Le français</Option>
             </Select>*/}
 
-            <Flags.US onClick={() => changeLocale('en')} style={{ width: '40px', cursor: 'pointer' }} />
+            <Flags.GB onClick={() => changeLocale('en')} style={{ width: '36px', cursor: 'pointer' }} />
             {` `}
-            <Flags.IT onClick={() => changeLocale('it')} style={{ width: '40px', cursor: 'pointer' }} />
+            <Flags.IT onClick={() => changeLocale('it')} style={{ width: '36px', cursor: 'pointer' }} />
             {` `}
-            <Flags.DE onClick={() => changeLocale('de')} style={{ width: '40px', cursor: 'pointer' }} />
+            <Flags.DE onClick={() => changeLocale('de')} style={{ width: '36px', cursor: 'pointer' }} />
             {` `}
-            <Flags.ES onClick={() => changeLocale('es')} style={{ width: '40px', cursor: 'pointer' }} />
+            <Flags.ES onClick={() => changeLocale('es')} style={{ width: '36px', cursor: 'pointer' }} />
             {` `}
-            <Flags.FR onClick={() => changeLocale('fr')} style={{ width: '40px', cursor: 'pointer' }} />
-
-
-
+            <Flags.FR onClick={() => changeLocale('fr')} style={{ width: '36px', cursor: 'pointer' }} />
         </Wrapper>
     );
 }
