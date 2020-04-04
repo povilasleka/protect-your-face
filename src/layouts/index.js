@@ -9,17 +9,11 @@ import Cart from '../components/Cart/index'
 import Footer from '../components/Footer'
 
 const Layout = ({ children }) => {
-  const [isCartOpen, setCartOpen] = useState(false);
-
-  const openCart = () => setCartOpen(true);
-  const closeCart = () => setCartOpen(false);
-
-
   return (
     <ContextProvider>
       <GlobalStyle />
       <Cart />
-      <Navigation/>
+      <Navigation />
 
       {children}
 

@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
+import Flags from 'country-flag-icons/react/3x2'
 
 export const Wrapper = styled.div`
     p {
         display: inline;
         color: whitesmoke;
-        padding-right: .5rem;
     }
 `;
 

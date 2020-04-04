@@ -1,25 +1,35 @@
 import React, { useContext } from 'react'
 import StoreContext from '../../context/StoreContext'
-import { Select, Option, Wrapper } from './styles'
-import Cookie from 'universal-cookie'
-import getUnicodeFlagIcon from 'country-flag-icons/unicode'
+import {
+    Wrapper,
+} from './styles'
+import Flags from 'country-flag-icons/react/3x2'
 
 const LocaleSelector = () => {
-    const { locale, changeLocale } = useContext(StoreContext);
-    const cookies = new Cookie();
-    if (!cookies.get('locale')) cookies.set('locale', 'en', { path: '/' });
-    if(locale === 'undefined') changeLocale(cookies.get('locale'));
+    const { _locale, changeLocale } = useContext(StoreContext);
 
     return (
         <Wrapper>
-            <p>Language:</p>
-            <Select onChange={e => changeLocale(e.target.value)} value={locale} data-width="fit">
+            {/*<Select onChange={e => changeLocale(e.target.value)} value={locale} data-width="fit">
                 <Option value="en">{getUnicodeFlagIcon('US') + ` `}English</Option>
                 <Option value="it">{getUnicodeFlagIcon('IT') + ` `}Italiano</Option>
                 <Option value="de">{getUnicodeFlagIcon('DE') + ` `}Deutsch</Option>
                 <Option value="es">{getUnicodeFlagIcon('ES') + ` `}Español</Option>
                 <Option value="fr">{getUnicodeFlagIcon('FR') + ` `}Le français</Option>
-            </Select>
+            </Select>*/}
+
+            <Flags.US onClick={() => changeLocale('en')} style={{ width: '40px', cursor: 'pointer' }} />
+            {` `}
+            <Flags.IT onClick={() => changeLocale('it')} style={{ width: '40px', cursor: 'pointer' }} />
+            {` `}
+            <Flags.DE onClick={() => changeLocale('de')} style={{ width: '40px', cursor: 'pointer' }} />
+            {` `}
+            <Flags.ES onClick={() => changeLocale('es')} style={{ width: '40px', cursor: 'pointer' }} />
+            {` `}
+            <Flags.FR onClick={() => changeLocale('fr')} style={{ width: '40px', cursor: 'pointer' }} />
+
+
+
         </Wrapper>
     );
 }
