@@ -4,11 +4,11 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `shield4face.com`,
-    seotitle: `Buy Face Shield from shield4face.com`,
-    product: `3M Professional Shield`,
+    seotitle: `Buy Face Protection Shield. Fast Shipping`,
+    product: `Professional Shield`,
     siteUrl: `https://shield4face.com/`,
     description: `
-    3M professional shields for the face are engineered to be comfortable, convenient, and functional to keep your face protected. 
+    Professional shields for the face are engineered to be comfortable, convenient, and functional to keep your face protected. 
     Wear it if there is a risk to get infected by a disease or if you might pass it on others. 
     Faceshield K95 has CE certification.
     `,
@@ -91,7 +91,8 @@ module.exports = {
         path: `${__dirname}/src/intl`,
         languages: [`en`, `it`, `es`, `de`, `fr`],
         defaultLanguage: `en`,
-        redirect: true
+        redirect: true,
+        redirectComponent: `${__dirname}/src/templates/RedirectPage/index.js`
       }
     }
   ],
