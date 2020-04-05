@@ -67,6 +67,7 @@ const ProductForm = ({ product }) => {
 
   const handleAddToCart = () => {
     addVariantToCart(productVariant.shopifyId, quantity);
+    window.open(checkout.webUrl);
   }
 
   const handleBuyNow = () => {
@@ -175,18 +176,9 @@ const ProductForm = ({ product }) => {
         className="btn btn-success"
         type="submit"
         disabled={!available || adding}
-        onClick={handleBuyNow}
-      >
-        <FormattedMessage id="buyNowButton" />
-      </BuyButton>
-
-      <BuyButton
-        className="btn btn-secondary"
-        type="submit"
-        disabled={!available || adding}
         onClick={handleAddToCart}
       >
-        <FormattedMessage id="addToCartButton" />
+        <FormattedMessage id="buyNowButton" />
       </BuyButton>
     </>
   )
