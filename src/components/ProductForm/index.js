@@ -70,8 +70,15 @@ const ProductForm = ({ product }) => {
   }
 
   const handleBuyNow = () => {
-    addVariantToCart(productVariant.shopifyId, quantity).then(() => {
-      window.open(checkout.webUrl);
+    client.checkout.create().then((checkout) => {
+      // Do something with the checkout
+      client.checkout.addLineItems(checkout.id, [{
+        variantId: productVariant.shopifyId,
+        quantity: quantity,
+      }]).then(() => {
+        window.open(checkout.webUrl)
+
+      })
     });
   }
 
