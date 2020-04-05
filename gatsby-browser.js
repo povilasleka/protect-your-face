@@ -14,3 +14,5 @@ import "@fortawesome/fontawesome-free/css/all.css"
 
 // TypographyJS
 import "./src/utils/typography"
+
+export function onServiceWorkerUpdateReady() { window.location.reload(true) };
