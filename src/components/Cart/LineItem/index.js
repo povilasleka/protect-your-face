@@ -25,6 +25,7 @@ const LineItem = props => {
     : null*/
 
   const handleRemove = () => {
+    console.log(line_item.id);
     removeLineItem(client, checkout.id, line_item.id)
   }
 
