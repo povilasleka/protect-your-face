@@ -9,11 +9,16 @@ const RedirectPage = ({ data }) => {
     const keywords = useKeywords();
 
     return (
-        <SEO
-            description={metadata.description}
-            title={metadata.seotitle}
-            keywords={keywords.indexPage}
-        />
+        <>
+            <SEO
+                description={metadata.description}
+                title={metadata.title}
+                keywords={keywords.indexPage}
+            />
+            <section style={{ opacity: '0' }}>
+                <h1>{metadata.seotitle}</h1>
+            </section>
+        </>
     );
 }
 
