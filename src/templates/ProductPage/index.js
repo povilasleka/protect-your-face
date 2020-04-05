@@ -20,8 +20,16 @@ import {
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct;
-  const { locale } = useContext(StoreContext);
+  const { locale, changeLocale } = useContext(StoreContext);
   const isMobile = useMediaQuery({ maxDeviceWidth: 576 });
+
+  if (locale === 'undefined') {
+    if (document.URL.search('/en/') >= 0) changeLocale('en');
+    if (document.URL.search('/it/') >= 0) changeLocale('it');
+    if (document.URL.search('/es/') >= 0) changeLocale('es');
+    if (document.URL.search('/de/') >= 0) changeLocale('de');
+    if (document.URL.search('/fr/') >= 0) changeLocale('fr');
+  }
 
   const localLangDescription = useContentParser(locale, product.descriptionHtml);
 
