@@ -71,10 +71,9 @@ const ProductForm = ({ product }) => {
 
   const handleBuyNow = () => {
     client.checkout.create().then((checkout) => {
-      // Do something with the checkout
       client.checkout.addLineItems(checkout.id, [{
         variantId: productVariant.shopifyId,
-        quantity: quantity,
+        quantity: Number(quantity),
       }]).then(() => {
         window.open(checkout.webUrl)
 
