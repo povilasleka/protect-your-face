@@ -1,10 +1,9 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import SEO from '../../components/seo'
 import useSiteMetadata from '../../hooks/use-sitemetadata'
 import useKeywords from '../../hooks/use-keywords'
 
-const RedirectPage = ({ data }) => {
+const RedirectPage = () => {
     const metadata = useSiteMetadata();
     const keywords = useKeywords();
 
@@ -17,20 +16,10 @@ const RedirectPage = ({ data }) => {
             />
             <section style={{ opacity: '0' }}>
                 <h1>{metadata.seotitle}</h1>
+                <p>{metadata.description}</p>
             </section>
         </>
     );
 }
-
-export const query = graphql`
-    query {
-        site {
-            siteMetadata {
-                seotitle
-                description
-            }
-        }
-    }
-`;
 
 export default RedirectPage;
