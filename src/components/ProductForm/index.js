@@ -17,6 +17,7 @@ const ProductForm = ({ product }) => {
   } = product
   const [variant, /*setVariant*/] = useState({ ...initialVariant })
   const [quantity, setQuantity] = useState(1)
+  const [disabled, setDisabled] = useState(false);
   const {
     addVariantToCart,
     store: { client, adding, checkout },
@@ -66,23 +67,18 @@ const ProductForm = ({ product }) => {
   }*/
 
   const handleAddToCart = () => {
-    //addVariantToCart(productVariant.shopifyId, quantity);
-    //window.open(checkout.webUrl);
-    //console.log(checkout)
-    //removeLineItem(client, checkout.id, productVariant.id)
-    client.checkout.create().then(checkout => {
-      console.log(checkout)
-    });
+    addVariantToCart(productVariant.shopifyId, quantity);
+    window.open(checkout.webUrl);
   }
 
   const handleBuyNow = () => {
+    setDisabled(true);
     client.checkout.create().then((checkout) => {
       client.checkout.addLineItems(checkout.id, [{
         variantId: productVariant.shopifyId,
         quantity: Number(quantity),
       }]).then(() => {
-        window.location.assign(checkout.webUrl)
-
+        window.location.assign(checkout.webUrl);
       })
     });
   }
@@ -180,8 +176,8 @@ const ProductForm = ({ product }) => {
       <BuyButton
         className="btn btn-success"
         type="submit"
-        disabled={!available || adding}
-        onClick={handleBuyNow}
+        disabled={disabled || adding}
+        onClick={handleAddToCart}
       >
         <FormattedMessage id="buyNowButton" />
       </BuyButton>
