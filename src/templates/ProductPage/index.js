@@ -23,7 +23,7 @@ const ProductPage = ({ data }) => {
   const { locale, changeLocale } = useContext(StoreContext);
   const isMobile = useMediaQuery({ maxDeviceWidth: 576 });
 
-  if (locale === 'undefined' && document !== 'undefined') {
+  if (locale === 'undefined' && window !== undefined) {
     if (document.URL.search('/en/') >= 0) changeLocale('en');
     if (document.URL.search('/it/') >= 0) changeLocale('it');
     if (document.URL.search('/es/') >= 0) changeLocale('es');
