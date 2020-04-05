@@ -95,12 +95,6 @@ module.exports = {
         redirectComponent: `${__dirname}/src/templates/RedirectPage/index.js`
       }
     },
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        allPageHeaders: ["cache-control: public, max-age=0, must-revalidate"],
-        mergeCachingHeaders: true
-      }
-    }
+    `gatsby-plugin-netlify`
   ],
 }
