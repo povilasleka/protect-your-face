@@ -77,7 +77,8 @@ const ProductForm = ({ product }) => {
     client.checkout.create().then((checkout) => {
       client.checkout.addLineItems(checkout.id, [{
         variantId: productVariant.shopifyId,
-        quantity: Number(quantity),
+        //quantity: Number(quantity),
+        quantity: 1
       }]).then(() => {
         window.location.assign(checkout.webUrl);
       })
@@ -170,8 +171,8 @@ const ProductForm = ({ product }) => {
         name="quantity"
         min="1"
         step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
+        placeholder="1"
+        value="1"
       />
 
       <BuyButton
