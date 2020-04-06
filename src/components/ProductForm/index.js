@@ -16,7 +16,7 @@ const ProductForm = ({ product }) => {
     priceRange: { minVariantPrice },
   } = product
   const [variant, /*setVariant*/] = useState({ ...initialVariant })
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState("1")
   const [disabled, setDisabled] = useState(false);
   const {
     addVariantToCart,
@@ -163,7 +163,7 @@ const ProductForm = ({ product }) => {
 
       {!available ? <OutOfStock><FormattedMessage id="outOfStockLabel" /></OutOfStock> : <InStock><FormattedMessage id="inStockLabel" /></InStock>}
       <br />
-      <label htmlFor="quantity">Qty. </label>
+      <label htmlFor="quantity">Minimum order qty. </label>
       <QuantityInput className="form-control"
         type="number"
         id="quantity"
