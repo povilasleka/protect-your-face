@@ -1,23 +1,13 @@
-import React, { useContext, useState } from 'react'
-import reduce from 'lodash/reduce'
+import React, { useContext } from 'react'
 
-import StoreContext from '../../context/StoreContext'
+// @ts-ignore
+import StoreContext from '~/context/StoreContext'
 import LineItem from './LineItem'
 
-import { Wrapper, ClosedCart } from './styles'
-
-const useQuantity = () => {
-    const { store: { checkout } } = useContext(StoreContext)
-    const items = checkout ? checkout.lineItems : []
-    const total = reduce(items, (acc, item) => acc + item.quantity, 0)
-    return [total !== 0, total]
-}
-
-const CheckoutSidebar = () => {
-    const [isCartOpen, setCartStatus] = useState(false);
-	const [hasItems, quantity] = useQuantity();
+const Cart = () => {
     const {
         store: { checkout },
+
     } = useContext(StoreContext)
 
     const handleCheckout = () => {
@@ -26,64 +16,33 @@ const CheckoutSidebar = () => {
 
     const line_items = checkout.lineItems.map(line_item => {
         return <LineItem key={line_item.id.toString()} line_item={line_item} />
-    });
+    })
 
-    if (!isCartOpen && hasItems) return (
-        <ClosedCart onClick={() => setCartStatus(true)}>
-            <i className="fas fa-shopping-cart"></i>
-        </ClosedCart>
-    );
-
-    if (isCartOpen) return (
-        <Wrapper>
-            <div className="container-fluid">
-
-                <div className="row mb-5">
-                    <div className="col top">
-                        <h3>Cart</h3>
-                        <button className="exit" onClick={() => setCartStatus(false)}>
-                            <i className="fas fa-times"></i>
-                        </button>
-                    </div>
+    return (
+        <div>
+            <h1 style={{ marginTop: '1rem' }}>Cart</h1>
+            <div className="row" style={{ marginTop: '5rem', marginBottom: '2rem' }}>
+                <div className="col-md-4">
+                    <h2>Subtotal</h2>
+                    <p>$ {checkout.subtotalPrice}</p>
+                    <br />
+                    <h2>Taxes</h2>
+                    <p>$ {checkout.totalTax}</p>
+                    <br />
+                    <h2>Total</h2>
+                    <p>$ {checkout.totalPrice}</p>
                 </div>
-
-                <div className="row">
-                    {line_items.length === 0 && (<div className="col">
-                        Cart is empty
-                    </div>)}
+                <div className="col-md-8">
                     {line_items}
                 </div>
-
-                <div className="row mt-5">
-                    <div className="col">
-                        <div className="card text-white bg-success">
-                            <div className="card-body">
-                                <h5 className="card-title">Total</h5>
-                                <p className="card-text">{checkout.totalPrice} €</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col">
-                        <button onClick={handleCheckout}
-                            disabled={checkout.lineItems.length === 0}
-                            className="btn btn-success mt-5"
-                            style={{
-                                backgroundColor: '#3167EB',
-                                border: '0px',
-                                padding: '.8rem',
-                                width: '100%'
-                            }}>Check out</button>
-                    </div>
-                </div>
-
             </div>
-        </Wrapper>
-    );
-
-    return null;
+            <br />
+            <button className="btn btn-success"
+                onClick={handleCheckout}
+                disabled={checkout.lineItems.length === 0}
+                style={{ marginBottom: '8rem' }}>Check out</button>
+        </div >
+    )
 }
 
-export default CheckoutSidebar;
+export default Cart

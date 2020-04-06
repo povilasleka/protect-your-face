@@ -41,12 +41,12 @@ const LineItem = props => {
       <div className="col">
         {line_item.quantity} pcs.
       </div>
-      <div className="col">
+      <div className="col-md-1">
         <button onClick={handleRemove} style={{
           background: 'none',
           border: 'none',
           fontSize: '1.2rem',
-          color: 'whitesmoke',
+          color: 'red',
           outline: 'none'
         }}><i className="fas fa-trash-alt"></i></button>
       </div>

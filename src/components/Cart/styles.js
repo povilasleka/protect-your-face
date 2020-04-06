@@ -43,25 +43,3 @@ export const Wrapper = styled.div`
     }
 `;
 
-export const ClosedCart = styled.button`
-    background: none;
-    border: none;
-    font-size: 1.6rem;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    position: fixed;
-    z-index: 100;
-    right: 0;
-    top: 50%;
-    width: 60px;
-    height: 100px;
-    background-color: rgb(245, 61, 61);
-    border-radius: 5rem 0 0 5rem;
-    padding: .6rem .5rem;
-    color: whitesmoke;
-
-    &:focus {
-        outline: none;
-    }
-`;

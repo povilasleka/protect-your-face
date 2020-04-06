@@ -5,16 +5,16 @@ import ContextProvider from '../provider/ContextProvider'
 
 import { GlobalStyle } from '../utils/styles'
 import Navigation from '../components/Navigation'
-import Cart from '../components/Cart/index'
+import CartIcon from '../components/Cart/icon'
 import Footer from '../components/Footer'
+
 
 const Layout = ({ children }) => {
   return (
     <ContextProvider>
       <GlobalStyle />
-      <Cart />
       <Navigation />
-
+      <CartIcon />
       {children}
 
       <Footer />

@@ -67,9 +67,7 @@ const ProductForm = ({ product }) => {
   }*/
 
   const handleAddToCart = () => {
-    addVariantToCart(productVariant.shopifyId, quantity).then(() => {
-      window.location.assign(checkout.webUrl);
-    })
+    addVariantToCart(productVariant.shopifyId, quantity);
   }
 
   const handleBuyNow = () => {
@@ -77,8 +75,7 @@ const ProductForm = ({ product }) => {
     client.checkout.create().then((checkout) => {
       client.checkout.addLineItems(checkout.id, [{
         variantId: productVariant.shopifyId,
-        //quantity: Number(quantity),
-        quantity: 1
+        quantity: Number(quantity),
       }]).then(() => {
         window.location.assign(checkout.webUrl);
       })
@@ -171,8 +168,8 @@ const ProductForm = ({ product }) => {
         name="quantity"
         min="1"
         step="1"
-        placeholder="1"
-        value="1"
+        onChange={handleQuantityChange}
+        value={quantity}
       />
 
       <BuyButton
@@ -181,7 +178,7 @@ const ProductForm = ({ product }) => {
         disabled={disabled || adding}
         onClick={handleAddToCart}
       >
-        <FormattedMessage id="buyNowButton" />
+        <FormattedMessage id="addToCartButton" />
       </BuyButton>
     </>
   )
