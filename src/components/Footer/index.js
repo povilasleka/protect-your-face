@@ -13,7 +13,7 @@ const Footer = () => {
                         <div className="col-md-12 col-sm-12">
                             <p className="copyright-text">
                                 Copyright © {new Date().getFullYear()} All Rights Reserved by {title}.
-                                Solution by <a href={authorWebsite}>{author}</a>
+                                {/*Solution by <a href={authorWebsite}>{author}</a>*/}
                             </p>
                         </div>
                     </div>

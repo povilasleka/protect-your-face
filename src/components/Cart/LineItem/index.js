@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 
 import StoreContext from '../../../context/StoreContext'
-import { Wrapper } from './styles'
 
 const LineItem = props => {
   const { line_item } = props
@@ -30,18 +29,18 @@ const LineItem = props => {
   }
 
   return (
-    <Wrapper>
-      <div className="col" style={{ transform: 'translateY(20%)' }}>
+    <tr>
+      <td>
         {variantImage}
-      </div>
+      </td>
 
-      <div className="col">
+      <td>
         {line_item.title}
-      </div>
-      <div className="col">
+      </td>
+      <td>
         {line_item.quantity} pcs.
-      </div>
-      <div className="col-md-1">
+      </td>
+      <td>
         <button onClick={handleRemove} style={{
           background: 'none',
           border: 'none',
@@ -49,8 +48,8 @@ const LineItem = props => {
           color: 'red',
           outline: 'none'
         }}><i className="fas fa-trash-alt"></i></button>
-      </div>
-    </Wrapper>
+      </td>
+    </tr>
   )
 }
 

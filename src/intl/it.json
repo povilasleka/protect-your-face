@@ -1,6 +1,6 @@
 {
     "title": "shield4face.com",
-    "product": "Face Shield",
+    "product": "Visiera Protettiva",
     "description": "La mascherina professionale per il viso è stata progettata per essere comoda, conveniente e funzionale per proteggerti. Indossala se c'è il rischio di essere infettato da una malattia o se potresti trasmetterla ad altri. La mascherina facciale K95 ha la certificazione CE.",
     "offerHeader": "Acquista Viso Scudo!",
     "offerText": "Spedizione gratuita in ue fino al",
@@ -8,9 +8,9 @@
     "cardPromoPrice": "Promo Prezzo:",
     "cardTimeOfDelivery": "3-5 giorni di consegna in EU",
     "cardFreeShipping": "Spedizione Gratuita",
+    "buyProductButton": "Vai alla descrizione",
     "buyNowButton": "Acquista Ora",
     "addToCartButton": "Aggiungi Al Carrello",
     "inStockLabel": "Disponibile",
     "outOfStockLabel": "Esaurito"
-
 }

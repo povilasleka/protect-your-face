@@ -1,6 +1,6 @@
 {
     "title": "shield4face.com",
-    "product": "Face Shield",
+    "product": "Protection Du Visage",
     "description": "Les boucliers professionnels pour le visage sont conçus pour être confortables, pratiques et fonctionnels afin de vous protéger. Portez-les s'il y a un risque d'infection par une maladie ou si vous risquez de la transmettre à d'autres personnes. Le Faceshield K95 est certifié CE",
     "offerHeader": "Achetez Face Shield!",
     "offerText": "Livraison gratuite dans l'EU jusqu'au",
@@ -8,6 +8,7 @@
     "cardPromoPrice": "Promo Prix:",
     "cardTimeOfDelivery": "Livraison 3-5 jours vers l'EU",
     "cardFreeShipping": "Livraison Gratuite",
+    "buyProductButton": "Aller à la description",
     "buyNowButton": "Acheter Maintenant",
     "addToCartButton": "Ajouter au chariot",
     "inStockLabel": "En stock",

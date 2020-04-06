@@ -2,9 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import useSiteMetadata from '../hooks/use-sitemetadata'
+import { useIntl } from 'gatsby-plugin-intl'
 
-function SEO({ description, lang, meta, keywords, title, pathName }) {
+function SEO({ description, lang, meta, keywords, title }) {
   const data = useSiteMetadata();
+  const intl = useIntl();
 
   const metaDescription = description || data.description
 
@@ -18,7 +20,7 @@ function SEO({ description, lang, meta, keywords, title, pathName }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${data.seotitle} `}
+      titleTemplate={`%s | ${intl.formatMessage({ id: "product" })}`}
       meta={[
         {
           name: `description`,

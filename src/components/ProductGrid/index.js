@@ -88,7 +88,7 @@ const ProductGrid = () => {
                   <br />
                   <CardText><FormattedMessage id="cardTimeOfDelivery" /> </CardText>
                   <br /><br />
-                  <button className="btn btn-success">Buy Product</button>
+                  <button className="btn btn-success">{intl.formatMessage({ id: "buyProductButton" })}</button>
                 </div>
               </div>
             </CardLink>

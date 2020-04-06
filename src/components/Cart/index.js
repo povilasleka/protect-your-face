@@ -3,6 +3,8 @@ import React, { useContext } from 'react'
 // @ts-ignore
 import StoreContext from '~/context/StoreContext'
 import LineItem from './LineItem'
+import { Table, TableHeading } from './styles'
+import { BuyButton } from '../ProductForm/styles'
 
 const Cart = () => {
     const {
@@ -20,23 +22,57 @@ const Cart = () => {
 
     return (
         <div>
-            <h1 style={{ marginTop: '1rem' }}>Cart</h1>
-            {line_items}
-            <div style={{ marginTop: '5rem', marginBottom: '2rem' }}>
-                <h2>Subtotal</h2>
-                <p>{checkout.subtotalPrice} €</p>
-                <br />
-                <h2>Taxes</h2>
-                <p>{checkout.totalTax} €</p>
-                <br />
-                <h2>Total</h2>
-                <p>{checkout.totalPrice} €</p>
+            <h2 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Cart</h2>
+            <Table className="table">
+                <thead className="thead-light">
+                    <TableHeading>
+                        <th scope="col">Product</th>
+                        <th scope="col"></th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Remove</th>
+                    </TableHeading>
+                </thead>
+                <tbody>
+                    {line_items}
+                </tbody>
+            </Table>
+            <h2 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Order Summary</h2>
+            <div className="row" style={{ marginBottom: '2rem' }}>
+                <div className="col-md-4 col-sm-12">
+                    <div className="card text-white bg-secondary mb-3">
+                        <div className="card-body">
+                            <h4>Subtotal</h4>
+                            <h6>{checkout.subtotalPrice} €</h6>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-4 col-sm-12">
+                    <div className="card text-white bg-secondary mb-3">
+                        <div className="card-body">
+                            <h4>Taxes (included in price)</h4>
+                            <h6>{checkout.totalTax} €</h6>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-4 col-sm-12">
+                    <div className="card text-white bg-primary mb-3">
+                        <div className="card-body">
+                            <h4>Total</h4>
+                            <h6>{checkout.totalPrice} €</h6>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br />
-            <button className="btn btn-success"
+            <BuyButton className="btn btn-success"
                 onClick={handleCheckout}
                 disabled={checkout.lineItems.length === 0}
-                style={{ marginBottom: '8rem' }}>Check out</button>
+                style={{
+                    marginBottom: '8rem',
+                    maxWidth: '300px',
+                    height: '50px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1.5px'
+                }}>Check out</BuyButton>
         </div >
     )
 }

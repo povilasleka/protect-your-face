@@ -43,3 +43,19 @@ export const Wrapper = styled.div`
     }
 `;
 
+export const Table = styled.table`
+    
+`;
+
+export const TableHeading = styled.tr`
+    th {
+        padding: 1.5rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    border-radius: 5px;
+    margin-bottom: 1rem;
+`;
+
