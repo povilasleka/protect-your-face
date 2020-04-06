@@ -21,20 +21,16 @@ const Cart = () => {
     return (
         <div>
             <h1 style={{ marginTop: '1rem' }}>Cart</h1>
-            <div className="row" style={{ marginTop: '5rem', marginBottom: '2rem' }}>
-                <div className="col-md-4">
-                    <h2>Subtotal</h2>
-                    <p>$ {checkout.subtotalPrice}</p>
-                    <br />
-                    <h2>Taxes</h2>
-                    <p>$ {checkout.totalTax}</p>
-                    <br />
-                    <h2>Total</h2>
-                    <p>$ {checkout.totalPrice}</p>
-                </div>
-                <div className="col-md-8">
-                    {line_items}
-                </div>
+            {line_items}
+            <div style={{ marginTop: '5rem', marginBottom: '2rem' }}>
+                <h2>Subtotal</h2>
+                <p>{checkout.subtotalPrice} €</p>
+                <br />
+                <h2>Taxes</h2>
+                <p>{checkout.totalTax} €</p>
+                <br />
+                <h2>Total</h2>
+                <p>{checkout.totalPrice} €</p>
             </div>
             <br />
             <button className="btn btn-success"
