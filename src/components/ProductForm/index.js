@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import StoreContext from '~/context/StoreContext'
 import { OutOfStock, InStock, BuyButton, QuantityInput } from './styles'
 import { useIntl, FormattedMessage } from 'gatsby-plugin-intl'
+import { navigate } from 'gatsby'
 
 const ProductForm = ({ product }) => {
   const {
@@ -68,6 +69,7 @@ const ProductForm = ({ product }) => {
 
   const handleAddToCart = () => {
     addVariantToCart(productVariant.shopifyId, quantity);
+    navigate("/cart/");
   }
 
   const handleBuyNow = () => {
