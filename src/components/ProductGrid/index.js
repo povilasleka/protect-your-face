@@ -69,11 +69,11 @@ const ProductGrid = () => {
           <Product key={id}>
             <CardLink to={`/product/${handle}/`}>
               <div className="card">
-                  {firstImage && firstImage.localFile &&
-                    (<Img className="card-img-top"
-                      fluid={firstImage.localFile.childImageSharp.fluid}
-                      alt={handle}
-                    />)}
+                {firstImage && firstImage.localFile &&
+                  (<Img className="card-img-top"
+                    fluid={firstImage.localFile.childImageSharp.fluid}
+                    alt={handle}
+                  />)}
                 <hr />
                 <div className="card-body" style={{ marginTop: 0 }}>
                   <Title className="card-text">{title}</Title>
@@ -87,13 +87,15 @@ const ProductGrid = () => {
                   </strong>
                   <br />
                   <CardText><FormattedMessage id="cardTimeOfDelivery" /> </CardText>
+                  <br /><br />
+                  <button className="btn btn-success">Buy Product</button>
                 </div>
               </div>
             </CardLink>
           </Product>
         ))
         : <p>No Products found!</p>}
-    </Grid>
+    </Grid >
   )
 }
 

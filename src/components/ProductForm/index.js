@@ -68,7 +68,7 @@ const ProductForm = ({ product }) => {
 
   const handleAddToCart = () => {
     addVariantToCart(productVariant.shopifyId, quantity).then(() => {
-      window.open(checkout.webUrl);
+      window.location.assign(checkout.webUrl);
     })
   }
 
