@@ -18,6 +18,8 @@ import {
   ProductDescription,
 } from './styles'
 
+import SlideShow from '../../components/SlideShow'
+
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct;
   const { locale, changeLocale } = useContext(StoreContext);
@@ -38,7 +40,10 @@ const ProductPage = ({ data }) => {
       <SEO title={product.title} description={product.description} />
       <Wrapper className="container">
         <div className="row">
-          {!isMobile ? (<div className="col-md-4 col-sm-12">
+          <div className="col-md-4 col-sm-12">
+            <SlideShow images={product.images}/>
+          </div>
+          {/*!isMobile ? (<div className="col-md-4 col-sm-12">
             {product.images.map(image => (
               <Img
                 fluid={image.localFile.childImageSharp.fluid}
@@ -54,7 +59,7 @@ const ProductPage = ({ data }) => {
                 alt={product.title}
               />
               <br />
-            </div>)}
+            </div>)*/}
           <div className="col-md-5 col-sm-12">
             <ProductTitle>{product.title}</ProductTitle>
             {isMobile && (<div className="col-md-3 col-sm-12 card">

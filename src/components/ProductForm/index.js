@@ -51,61 +51,10 @@ const ProductForm = ({ product }) => {
     setQuantity(target.value)
   }
 
-  /*const handleOptionChange = (optionIndex, { target }) => {
-    const { value } = target
-    const currentOptions = [...variant.selectedOptions]
-
-    currentOptions[optionIndex] = {
-      ...currentOptions[optionIndex],
-      value,
-    }
-
-    const selectedVariant = find(variants, ({ selectedOptions }) =>
-      isEqual(currentOptions, selectedOptions)
-    )
-
-    setVariant({ ...selectedVariant })
-  }*/
-
   const handleAddToCart = () => {
     addVariantToCart(productVariant.shopifyId, quantity);
     navigate("/cart/");
   }
-
-  const handleBuyNow = () => {
-    setDisabled(true);
-    client.checkout.create().then((checkout) => {
-      client.checkout.addLineItems(checkout.id, [{
-        variantId: productVariant.shopifyId,
-        quantity: Number(quantity),
-      }]).then(() => {
-        window.location.assign(checkout.webUrl);
-      })
-    });
-  }
-
-  /* 
-  Using this in conjunction with a select input for variants 
-  can cause a bug where the buy button is disabled, this 
-  happens when only one variant is available and it's not the
-  first one in the dropdown list. I didn't feel like putting 
-  in time to fix this since its an edge case and most people
-  wouldn't want to use dropdown styled selector anyways - 
-  at least if the have a sense for good design lol.
-  */
-  /*const checkDisabled = (name, value) => {
-    const match = find(variants, {
-      selectedOptions: [
-        {
-          name: name,
-          value: value,
-        },
-      ],
-    })
-    if (match === undefined) return true
-    if (match.availableForSale === true) return false
-    return true
-  }*/
 
   const price = Intl.NumberFormat(undefined, {
     currency: minVariantPrice.currencyCode,
@@ -139,27 +88,6 @@ const ProductForm = ({ product }) => {
           fontSize: '1.2rem'
         }}>{oldPrice}</p>}
       </div>
-      {/*options.map(({ id, name, values }, index) => (
-        <React.Fragment key={id}>
-          <label htmlFor={name}>{name} </label>
-          <select
-            name={name}
-            key={id}
-            onBlur={event => handleOptionChange(index, event)}
-          >
-            {values.map(value => (
-              <option
-                value={value}
-                key={`${name}-${value}`}
-                disabled={checkDisabled(name, value)}
-              >
-                {value}
-              </option>
-            ))}
-          </select>
-          <br />
-        </React.Fragment>
-            ))*/}
 
       {!available ? <OutOfStock><FormattedMessage id="outOfStockLabel" /></OutOfStock> : <InStock><FormattedMessage id="inStockLabel" /></InStock>}
       <br />
