@@ -42,24 +42,11 @@ const ProductPage = ({ data }) => {
         <div className="row">
           <div className="col-md-4 col-sm-12">
             <SlideShow images={product.images}/>
+            <br />
+            <video width="100%" controls>
+              <source id="videoSource" src="https://srv-file10.gofile.io/download/g4erYk/video (1).mov" />
+            </video>
           </div>
-          {/*!isMobile ? (<div className="col-md-4 col-sm-12">
-            {product.images.map(image => (
-              <Img
-                fluid={image.localFile.childImageSharp.fluid}
-                key={image.id}
-                alt={product.title}
-              />
-            ))}
-          </div>) :
-            (<div className="col-md-4 col-sm-12">
-              <Img
-                fluid={product.images[0].localFile.childImageSharp.fluid}
-                key={product.images[0].id}
-                alt={product.title}
-              />
-              <br />
-            </div>)*/}
           <div className="col-md-5 col-sm-12">
             <ProductTitle>{product.title}</ProductTitle>
             {isMobile && (<div className="col-md-3 col-sm-12 card">
@@ -85,6 +72,10 @@ const ProductPage = ({ data }) => {
 
 export const query = graphql`
   query($handle: String!) {
+    file(relativePath: {eq: "video.mov"}) {
+      url
+      publicURL
+    }
     shopifyProduct(handle: { eq: $handle }) {
       id
       title

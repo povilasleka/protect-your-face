@@ -4,7 +4,7 @@ import BackgroundImage from 'gatsby-background-image'
 import { RightButton, LeftButton, Button } from './styles'
 import Img from 'gatsby-image'
 
-const SlideShow = ({ images }) => {
+const SlideShow = ({ images, smallVersion }) => {
     const [index, setIndex] = useState(0);
     const length = images.length - 1;
 
@@ -14,6 +14,7 @@ const SlideShow = ({ images }) => {
 
     const handlePrevious = () => {
         index === 0 ? setIndex(length) : setIndex(index - 1);
+        console.log('prev');
     }
 
     return (
@@ -24,6 +25,7 @@ const SlideShow = ({ images }) => {
             <LeftButton onClick={handlePrevious}><i className="fas fa-angle-left"></i></LeftButton>
             <RightButton onClick={handleNext}><i className="fas fa-angle-right"></i></RightButton>
             </BackgroundImage>
+            { !smallVersion && (
             <div className="row" style={{ marginLeft: '0px', marginTop: '1rem' }}>
                 {images.map((image, i) => (
                     <Button onClick={() => setIndex(i)} style={{ width: '50px', padding: '0', marginRight: '2px', borderRadius: '5px'  }}>
@@ -33,6 +35,7 @@ const SlideShow = ({ images }) => {
                     </Button>
                 ))}
             </div>
+            )}
         </>
     );
 }

@@ -1,6 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useIntl, FormattedMessage } from 'gatsby-plugin-intl'
+import Img from 'gatsby-image'
+import { LeftButton, RightButton } from '../SlideShow/styles'
 
 // @ts-ignore
 import StoreContext from '~/context/StoreContext'
@@ -13,8 +15,6 @@ import {
   CardText,
   CardLink
 } from './styles'
-// @ts-ignore
-import { Img } from '~/utils/styles'
 
 const ProductGrid = () => {
   const intl = useIntl();
@@ -62,19 +62,28 @@ const ProductGrid = () => {
     style: 'currency',
   }).format(parseFloat(price ? price : 0))
 
+  const [image, setImage] = useState(0);
+
+  const handleNext = () => {
+    image === 2 ? setImage(0) : setImage(image + 1);
+  }
+
+  const handlePrevious = () => {
+    image === 0 ? setImage(2) : setImage(image - 1);
+  }
+
   return (
     <Grid>
       {allShopifyProduct.edges
         ? allShopifyProduct.edges.map(({ node: { id, handle, title, images: [firstImage], variants: [firstVariant] } }) => (
           <Product key={id}>
-            <CardLink to={`/product/${handle}/`}>
+              <CardLink to={`/product/${handle}/`}>
               <div className="card">
-                {firstImage && firstImage.localFile &&
+                {firstImage && firstImage.localFile && 
                   (<Img className="card-img-top"
-                    fluid={firstImage.localFile.childImageSharp.fluid}
-                    alt={handle}
-                  />)}
-                <hr />
+                  fluid={firstImage.localFile.childImageSharp.fluid}
+                  alt={handle}
+                />)}
                 <div className="card-body" style={{ marginTop: 0 }}>
                   <Title className="card-text">{title}</Title>
                   <CardText><FormattedMessage id="cardPrice" /> </CardText>
@@ -91,7 +100,7 @@ const ProductGrid = () => {
                   <button className="btn btn-success">{intl.formatMessage({ id: "buyProductButton" })}</button>
                 </div>
               </div>
-            </CardLink>
+              </CardLink>
           </Product>
         ))
         : <p>No Products found!</p>}
