@@ -43,9 +43,7 @@ const ProductPage = ({ data }) => {
           <div className="col-md-4 col-sm-12">
             <SlideShow images={product.images}/>
             <br />
-            <video width="100%" controls>
-              <source id="videoSource" src="https://srv-file10.gofile.io/download/g4erYk/video (1).mov" />
-            </video>
+            <iframe src="https://player.vimeo.com/video/405114220" width="100%" height="640" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
           </div>
           <div className="col-md-5 col-sm-12">
             <ProductTitle>{product.title}</ProductTitle>
