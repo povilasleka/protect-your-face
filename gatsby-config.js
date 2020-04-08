@@ -96,12 +96,5 @@ module.exports = {
       }
     },
     `gatsby-plugin-netlify`,
-    {
-      resolve: `gatsby-plugin-hotjar`,
-      options: {
-        id: 1755508,
-        sv: 6
-      },
-    },
   ],
 }

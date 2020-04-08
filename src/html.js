@@ -36,6 +36,7 @@ export default function HTML(props) {
             `,
           }}
         />
+        <script src="//code.tidio.co/d5bxlt4tbqp3jehodi4zfglrty25x8gf.js" async></script>
       </body>
     </html>
   )

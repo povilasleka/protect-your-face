@@ -13,7 +13,7 @@ const Cart = () => {
     } = useContext(StoreContext)
 
     const handleCheckout = () => {
-        window.open(checkout.webUrl)
+        window.open(checkout.webUrl, '_self');
     }
 
     const line_items = checkout.lineItems.map(line_item => {
