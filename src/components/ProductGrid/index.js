@@ -83,6 +83,7 @@ const ProductGrid = () => {
                   (<Img className="card-img-top"
                   fluid={firstImage.localFile.childImageSharp.fluid}
                   alt={handle}
+                  style={{ maxHeight: '400px' }}
                 />)}
                 <div className="card-body" style={{ marginTop: 0 }}>
                   <Title className="card-text">{title}</Title>

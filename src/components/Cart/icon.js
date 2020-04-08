@@ -6,34 +6,72 @@ import reduce from 'lodash/reduce'
 import StoreContext from '~/context/StoreContext'
 
 export const ClosedCart = styled(Link)`
-    background: none;
     border: none;
     font-size: 1.6rem;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     position: fixed;
     z-index: 100;
     right: 0;
-    top: 50%;
-    width: 60px;
-    height: 100px;
-    background-color: rgb(245, 61, 61);
-    border-radius: 5rem 0 0 5rem;
+    top: 40%;
+    width: 35px;
+    height: 90px;
+    padding: 0 4px;
+    background: rgb(247,56,66);
+    background: linear-gradient(150deg, rgba(247,56,66,1) 0%, rgba(247,115,40,1) 100%);
+    border-radius: 5px 0 0 5px;
     color: whitesmoke;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-align: center;
+
+    @keyframes shake {
+        5%, 45% {
+            transform: translate3d(-0.5px, 0, 0);
+        }
+
+        10%, 40% {
+            transform: translate3d(1px, 0, 0);
+        }
+
+        15%, 25%, 35% {
+            transform: translate3d(-1.5px, 0, 0);
+        }
+
+        20%, 30% {
+            transform: translate3d(1.5px, 0, 0);
+        }
+        100% {
+            transform: none;
+        }
+    }
 
     &:focus {
         outline: none;
     }
 
     i {
-        transform: translate(1rem, 1.8rem);
-        color: whitesmoke;
+        color: rgb(247,56,66);
+        font-size: 2rem;
+        animation: shake 2s;
+        animation-iteration-count: infinite;
     }
 
-    i:hover {
+    &:hover {
         color: whitesmoke;
+        text-decoration: none;
     }
+
+    p {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 1.1rem;
+        letter-spacing: 4px;
+        padding: 0;
+        margin: 0;
+        font-weight: bold;
+    }
+
+
 `;
 
 const useQuantity = () => {
@@ -50,7 +88,8 @@ const Icon = () => {
 
     return (
         <ClosedCart to="/cart">
-            <i className="fas fa-shopping-cart"></i>
+            <p>cart</p>
+            <i className="fas fa-exclamation"></i>
         </ClosedCart>
     )
 }
