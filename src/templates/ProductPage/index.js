@@ -41,7 +41,9 @@ const ProductPage = ({ data }) => {
       <Wrapper className="container">
         <div className="row">
           <div className="col-md-4 col-sm-12">
-            <SlideShow images={product.images}/>
+            <
+              // @ts-ignore
+              SlideShow images={product.images} />
             <br />
             <iframe src="https://player.vimeo.com/video/405368373" width="100%" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> 
           </div>
