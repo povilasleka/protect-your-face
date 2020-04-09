@@ -20,7 +20,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${intl.formatMessage({ id: "product" })}`}
+      titleTemplate={`%s | ${intl.formatMessage({ id: "product" })} - ${data.seotitle}`}
       meta={[
         {
           name: `description`,

@@ -31,7 +31,7 @@ const IndexPage = ({ data, location }) => {
 
   return (
     <>
-      <SEO title="Home" keywords={keywords.indexPage} pathName={location} />
+      <SEO title="Home" keywords={keywords.indexPage} />
       <Jumbotron imageUrl={data.allFile.nodes[1].childImageSharp.fluid}
         imageUrlMobile={data.allFile.nodes[0].childImageSharp.fluid} />
 

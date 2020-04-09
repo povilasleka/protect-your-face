@@ -6,16 +6,16 @@ export const Button = styled.button`
     width: 50%;
     background: none;
     border: none;
-    color: rgba(72, 95, 247, .7);
+    color: rgba(102, 102, 102, .7);
 
-    font-size: 3rem;
+    font-size: 2rem;
 
     &:active {
         outline: none;
     }
 
     &:hover {
-        color: rgba(72, 95, 247, 1);
+        color: rgba(102, 102, 102, 1);
     }
 `;
 

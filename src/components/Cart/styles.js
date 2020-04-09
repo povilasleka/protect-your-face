@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { BuyButton } from '../ProductForm/styles'
 
 export const Wrapper = styled.div`
     position: fixed;
@@ -57,5 +58,14 @@ export const TableHeading = styled.tr`
 
     border-radius: 5px;
     margin-bottom: 1rem;
+`;
+
+export const CheckoutButton = styled(BuyButton)`
+    margin-bottom: 8rem;
+    width: ${props => props.isMobileDevice ? '100%' : '300px'};
+    padding-top: .5rem;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 `;
 

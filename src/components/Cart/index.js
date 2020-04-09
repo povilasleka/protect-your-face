@@ -3,8 +3,9 @@ import React, { useContext } from 'react'
 // @ts-ignore
 import StoreContext from '~/context/StoreContext'
 import LineItem from './LineItem'
-import { Table, TableHeading } from './styles'
-import { BuyButton } from '../ProductForm/styles'
+import { Table, TableHeading, CheckoutButton } from './styles'
+import { OutboundLink } from 'gatsby-plugin-gtag'
+import { useMediaQuery } from 'react-responsive'
 
 const Cart = () => {
     const {
@@ -12,13 +13,15 @@ const Cart = () => {
 
     } = useContext(StoreContext)
 
-    const handleCheckout = () => {
+    /*const handleCheckout = () => {
         window.open(checkout.webUrl, '_self');
-    }
+    }*/
 
     const line_items = checkout.lineItems.map(line_item => {
         return <LineItem key={line_item.id.toString()} line_item={line_item} />
     })
+
+    const isMobileDevice = useMediaQuery({ query: '(max-width: 576px)' });
 
     return (
         <div>
@@ -42,14 +45,14 @@ const Cart = () => {
                     <div className="card text-white bg-secondary mb-3">
                         <div className="card-body">
                             <h4>Subtotal</h4>
-                            <h6>{checkout.subtotalPrice} €</h6>
+                            <h6>{checkout.subtotalPrice - checkout.totalTax} €</h6>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-4 col-sm-12">
                     <div className="card text-white bg-secondary mb-3">
                         <div className="card-body">
-                            <h4>Taxes (included in price)</h4>
+                            <h4>Taxes</h4>
                             <h6>{checkout.totalTax} €</h6>
                         </div>
                     </div>
@@ -63,16 +66,14 @@ const Cart = () => {
                     </div>
                 </div>
             </div>
-            <BuyButton className="btn btn-success"
-                onClick={handleCheckout}
-                disabled={checkout.lineItems.length === 0}
-                style={{
-                    marginBottom: '8rem',
-                    maxWidth: '300px',
-                    height: '50px',
-                    textTransform: 'uppercase',
-                    letterSpacing: '1.5px'
-                }}>Check out</BuyButton>
+
+            <OutboundLink href={checkout.webUrl}>
+                <CheckoutButton className="btn btn-success" 
+                                disabled={checkout.lineItems.length === 0}
+                                isMobileDevice={isMobileDevice}>
+                    Check out
+                </CheckoutButton>
+            </OutboundLink>
         </div >
     )
 }

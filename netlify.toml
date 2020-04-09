@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://admin.shield4face.com"
+  to = "https://protectyourface.myshopify.com/admin"
+  status = 200
+  force = true

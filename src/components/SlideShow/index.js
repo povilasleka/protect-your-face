@@ -28,9 +28,9 @@ const SlideShow = ({ images, smallVersion }) => {
             { !smallVersion && (
             <div className="row" style={{ marginLeft: '0px', marginTop: '1rem' }}>
                 {images.map((image, i) => (
-                    <Button onClick={() => setIndex(i)} style={{ width: '50px', padding: '0', marginRight: '2px', borderRadius: '5px'  }}>
+                    <Button onClick={() => setIndex(i)} style={{ width: '50px', padding: '0', marginRight: '6px', borderRadius: '1px'  }}>
                     <Img fluid={image.localFile.childImageSharp.fluid} 
-                         style={{ width: '50px', border: '1px solid lightblue'}} 
+                         style={{ width: '50px', border: '1px solid gray', borderRadius: '1px'}} 
                     />
                     </Button>
                 ))}
