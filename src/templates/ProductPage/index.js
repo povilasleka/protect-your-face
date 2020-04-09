@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import StoreContext from '../../context/StoreContext'
 import { useMediaQuery } from 'react-responsive'
 import useContentParser from '../../hooks/use-contentparser'
+import CartIcon from '../../components/Cart/icon'
 
 // @ts-ignore
 import SEO from '~/components/seo'
@@ -38,6 +39,7 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
+      <CartIcon />
       <Wrapper className="container">
         <div className="row">
           <div className="col-md-4 col-sm-12">

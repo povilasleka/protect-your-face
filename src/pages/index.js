@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import ProductGrid from '../components/ProductGrid'
 import Jumbotron from '../components/Jumbotron'
 import useKeywords from '../hooks/use-keywords'
+import CartIcon from '../components/Cart/icon'
 
 export const query = graphql`
     query {
@@ -32,6 +33,7 @@ const IndexPage = ({ data, location }) => {
   return (
     <>
       <SEO title="Home" keywords={keywords.indexPage} />
+      <CartIcon />
       <Jumbotron imageUrl={data.allFile.nodes[1].childImageSharp.fluid}
         imageUrlMobile={data.allFile.nodes[0].childImageSharp.fluid} />
 

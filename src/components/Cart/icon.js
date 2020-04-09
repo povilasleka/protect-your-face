@@ -11,10 +11,10 @@ export const ClosedCart = styled(Link)`
     position: fixed;
     z-index: 100;
     right: 0;
-    top: 20%;
+    top: 30%;
     width: 35px;
     height: 100px;
-    padding: 0 5px;
+    padding: 4px 6px 0px 6px;
     background: rgb(247,56,66);
     background: linear-gradient(150deg, rgba(247,56,66,1) 0%, rgba(247,115,40,1) 100%);
     border-radius: 10px 0 0 10px;
@@ -67,8 +67,8 @@ export const ClosedCart = styled(Link)`
         text-transform: uppercase;
         text-decoration: none;
         color: whitesmoke;
-        font-size: 1.1rem;
-        letter-spacing: 4px;
+        font-size: 1rem;
+        letter-spacing: 6px;
         padding: 0;
         margin: 0;
         font-weight: bold;
