@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 // @ts-ignore
 import StoreContext from '~/context/StoreContext'
@@ -22,6 +22,12 @@ const Cart = () => {
     })
 
     const isMobileDevice = useMediaQuery({ query: '(max-width: 576px)' });
+
+    let redirectUrl = "";
+    if (typeof checkout.webUrl != 'undefined') {
+        redirectUrl = checkout.webUrl.slice(8);
+        redirectUrl = redirectUrl.slice(redirectUrl.indexOf('/') + 1);
+    }
 
     return (
         <div>
@@ -67,7 +73,7 @@ const Cart = () => {
                 </div>
             </div>
 
-            <OutboundLink href={`/redirect/checkout/` + checkout.webUrl}>
+            <OutboundLink href={`/shopify/` + redirectUrl}>
                 <CheckoutButton className="btn btn-success" 
                                 disabled={checkout.lineItems.length === 0}
                                 isMobileDevice={isMobileDevice}>
