@@ -45,7 +45,7 @@ const Cart = () => {
                     <div className="card text-white bg-secondary mb-3">
                         <div className="card-body">
                             <h4>Subtotal</h4>
-                            <h6>{checkout.subtotalPrice - checkout.totalTax} €</h6>
+                            <h6>{(checkout.subtotalPrice - checkout.totalTax).toFixed(2)} €</h6>
                         </div>
                     </div>
                 </div>
