@@ -2,19 +2,19 @@ import styled from '@emotion/styled'
 
 export const SFooter = styled.footer`
     .site-footer {
-        background-color: #c7dfff;
+        background-color: #242D34;
         padding: 1rem 0;
         font-size:15px;
         line-height:24px;
-        color: black;
+        color: whitesmoke;
     }
 
     .site-footer a {
-        color: black;
+        color: whitesmoke;
     }
 
     .site-footer a:hover {
-        color: black;
+        color: whitesmoke;
         text-decoration: underline
     }
 
