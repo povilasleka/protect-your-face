@@ -5,9 +5,11 @@ import visa from 'payment-icons/min/flat/visa.svg'
 import mastercard from 'payment-icons/min/flat/mastercard.svg'
 import maestro from 'payment-icons/min/flat/maestro.svg'
 import amex from 'payment-icons/min/flat/amex.svg'
+import { useIntl } from 'gatsby-plugin-intl'
 
 const Footer = () => {
     const { title } = useSiteMetadata();
+    const intl = useIntl();
 
     return (
         <SFooter>
@@ -15,7 +17,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row mt-4">
                         <div className="col-md-2 col-sm-12 my-auto">
-                            <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>Secure payment:</p>
+                        <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{ intl.formatMessage({ id: 'securePaymentLabel' }) }</p>
                         </div>
                         <div className="col-md-10 col-sm-12 my-auto">
                             <img src={visa} width="55px" style={{ marginRight: '.4rem' }}/>

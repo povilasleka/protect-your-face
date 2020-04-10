@@ -12,5 +12,6 @@
     "buyNowButton": "Buy Now",
     "addToCartButton": "Add to Cart",
     "inStockLabel": "In Stock",
-    "outOfStockLabel": "Out Of Stock"
+    "outOfStockLabel": "Out Of Stock",
+    "securePaymentLabel": "Secure payment:"
 }
