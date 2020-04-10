@@ -1,11 +1,7 @@
 {
-  "name": "gatsby-shopify-starter",
-  "private": false,
-  "description": "A simple starter to build a blazing fast Shopify store quickly with Gatsby",
-  "version": "0.1.0",
   "author": "Alexander Hörl <alexander.horl2@live.de>",
-  "engines": {
-    "node": "=> 10.13 < 10.11"
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
@@ -49,6 +45,13 @@
     "typography-theme-parnassus": "^0.16.19",
     "universal-cookie": "^4.0.3"
   },
+  "description": "A simple starter to build a blazing fast Shopify store quickly with Gatsby",
+  "devDependencies": {
+    "prettier": "^1.15.2"
+  },
+  "engines": {
+    "node": "=> 10.13 < 10.11"
+  },
   "keywords": [
     "gatsby",
     "shopify",
@@ -57,21 +60,17 @@
     "shop"
   ],
   "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
-  },
-  "devDependencies": {
-    "prettier": "^1.15.2"
-  },
+  "name": "gatsby-shopify-starter",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "format": "prettier --write \"src/**/*.js\""
+  },
+  "version": "0.1.0"
 }

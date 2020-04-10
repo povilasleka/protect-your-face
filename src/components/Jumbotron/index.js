@@ -10,7 +10,7 @@ const date = () => {
     return date;
 }
 
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
 
 const Jumbotron = ({ imageUrl, imageUrlMobile }) => {
     const intl = useIntl();
@@ -39,7 +39,7 @@ const Jumbotron = ({ imageUrl, imageUrlMobile }) => {
                             <h2><FormattedMessage id="offerHeader" /></h2>
                             <p className="lead">
                                 <FormattedMessage id="offerText" />
-                                {` ` + months[date().getMonth()] + ` ` + date().getUTCDate() + `th`}
+                                {` ` + date().getFullYear() + `/` + months[date().getMonth()] + `/` + date().getUTCDate()}
                             </p>
                         </div>
                     </div>

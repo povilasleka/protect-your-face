@@ -1,5 +1,6 @@
 [[redirects]]
-  from = "https://admin.shield4face.com"
-  to = "https://protectyourface.myshopify.com/admin"
+  from = "/shopify"
+  to = "https://protectyourface.myshopify.com"
   status = 200
-  force = true
+  force = true # COMMENT: ensure that we always redirect
+  headers = {X-From = "Netlify"}

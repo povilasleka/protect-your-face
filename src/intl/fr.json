@@ -13,5 +13,6 @@
     "addToCartButton": "Ajouter au chariot",
     "inStockLabel": "En stock",
     "outOfStockLabel": "En rupture de stock",
-    "securePaymentLabel": "Paiement sécurisé:"
+    "securePaymentLabel": "Paiement sécurisé:",
+    "allRightsReservedByLabel": "Tous droits réservés par"
 }

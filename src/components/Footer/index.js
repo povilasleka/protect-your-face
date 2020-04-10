@@ -20,18 +20,17 @@ const Footer = () => {
                         <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{ intl.formatMessage({ id: 'securePaymentLabel' }) }</p>
                         </div>
                         <div className="col-md-10 col-sm-12 my-auto">
-                            <img src={visa} width="55px" style={{ marginRight: '.4rem' }}/>
-                            <img src={mastercard} width="55px" style={{ marginRight: '.4rem' }}/>
-                            <img src={maestro} width="55px" style={{ marginRight: '.4rem' }}/>
-                            <img src={amex} width="55px" style={{ marginRight: '.4rem' }}/>
+                            <img src={visa} width="55px" style={{ marginRight: '.4rem' }} alt="Visa card"/>
+                            <img src={mastercard} width="55px" style={{ marginRight: '.4rem' }} alt="Mastercard"/>
+                            <img src={maestro} width="55px" style={{ marginRight: '.4rem' }} alt="Maestro card"/>
+                            <img src={amex} width="55px" style={{ marginRight: '.4rem' }} alt="Amex card"/>
                         </div>
                     </div>
                     <hr style={{ background: 'white' }}/>
                     <div className="row mb-4">
                         <div className="col-md-12 col-sm-12">
                             <p className="copyright-text">
-                                Copyright © {new Date().getFullYear()} All Rights Reserved by {title}.
-                                {/*Solution by <a href={authorWebsite}>{author}</a>*/}
+                                Copyright © {new Date().getFullYear()} {intl.formatMessage({ id: 'allRightsReservedByLabel' })} {title}.
                             </p>
                         </div>
                     </div>

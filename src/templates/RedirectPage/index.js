@@ -2,7 +2,6 @@ import React from 'react'
 import SEO from '../../components/seo'
 import useSiteMetadata from '../../hooks/use-sitemetadata'
 import useKeywords from '../../hooks/use-keywords'
-import {Link} from 'gatsby'
 
 const RedirectPage = () => {
     const metadata = useSiteMetadata();

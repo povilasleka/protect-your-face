@@ -13,5 +13,6 @@
     "addToCartButton": "Add to Cart",
     "inStockLabel": "In Stock",
     "outOfStockLabel": "Out Of Stock",
-    "securePaymentLabel": "Secure payment:"
+    "securePaymentLabel": "Secure payment:",
+    "allRightsReservedByLabel": "All rights reserved by"
 }

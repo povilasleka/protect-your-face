@@ -13,5 +13,6 @@
     "addToCartButton": "Zum Warenkorb hinzufügen",
     "inStockLabel": "Auf Lager",
     "outOfStockLabel": "Nicht vorrättig",
-    "securePaymentLabel": "Sichere Bezahlung:"
+    "securePaymentLabel": "Sichere Bezahlung:",
+    "allRightsReservedByLabel": "Alle Rechte vorbehalten von"
 }

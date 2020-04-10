@@ -13,5 +13,6 @@
     "addToCartButton": "Aggiungi Al Carrello",
     "inStockLabel": "Disponibile",
     "outOfStockLabel": "Esaurito",
-    "securePaymentLabel": "Pagamento sicuro:"
+    "securePaymentLabel": "Pagamento sicuro:",
+    "allRightsReservedByLabel": "Tutti i diritti riservati da"
 }
