@@ -67,7 +67,7 @@ const Cart = () => {
                 </div>
             </div>
 
-            <OutboundLink href={checkout.webUrl}>
+            <OutboundLink href={`/redirect/checkout/` + checkout.webUrl}>
                 <CheckoutButton className="btn btn-success" 
                                 disabled={checkout.lineItems.length === 0}
                                 isMobileDevice={isMobileDevice}>
