@@ -23,11 +23,11 @@ const Cart = () => {
 
     const isMobileDevice = useMediaQuery({ query: '(max-width: 576px)' });
 
-    let redirectUrl = "";
+    /*let redirectUrl = "";
     if (typeof checkout.webUrl != 'undefined') {
         redirectUrl = checkout.webUrl.slice(8);
         redirectUrl = redirectUrl.slice(redirectUrl.indexOf('/') + 1);
-    }
+    }*/
 
     return (
         <div>
@@ -73,7 +73,7 @@ const Cart = () => {
                 </div>
             </div>
 
-            <OutboundLink href={`/shopify/` + redirectUrl}>
+            <OutboundLink href={checkout.webUrl}>
                 <CheckoutButton className="btn btn-success" 
                                 disabled={checkout.lineItems.length === 0}
                                 isMobileDevice={isMobileDevice}>

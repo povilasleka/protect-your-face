@@ -10,7 +10,6 @@ import SEO from '~/components/seo'
 // @ts-ignore
 import ProductForm from '~/components/ProductForm'
 import {
-  Img,
   Wrapper,
   // @ts-ignore
 } from '~/utils/styles'
@@ -47,7 +46,8 @@ const ProductPage = ({ data }) => {
               // @ts-ignore
               SlideShow images={product.images} />
             <br />
-            <iframe src="https://player.vimeo.com/video/405368373" width="100%" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> 
+            <iframe title="Video" src="https://player.vimeo.com/video/405368373" width="100%" height="300" frameBorder="0" allow="autoplay; fullscreen"
+                    allowFullScreen/>
           </div>
           <div className="col-md-5 col-sm-12">
             <ProductTitle>{product.title}</ProductTitle>
