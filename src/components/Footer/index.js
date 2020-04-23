@@ -26,7 +26,7 @@ const Footer = () => {
                         <div className="col-md-4 col-sm-12">
                             <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>Contact</p>
                             <p>Minties str. 9 Vilnius, Lithuania.<br />
-                            Email: info@shielf4face.com</p>
+                            Email: info@shield4face.com</p>
                         </div>
                     </div>
                     <hr style={{ background: 'white' }} />
