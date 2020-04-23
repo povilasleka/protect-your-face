@@ -38,7 +38,7 @@ const LineItem = props => {
         {line_item.title}
       </td>
       <td>
-        {line_item.quantity} pcs.
+        {line_item.quantity} {line_item.quantity == 1 ? 'Unit' : 'Units'}
       </td>
       <td>
         <button onClick={handleRemove} style={{

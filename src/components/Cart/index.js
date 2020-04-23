@@ -37,7 +37,7 @@ const Cart = () => {
                     <TableHeading>
                         <th scope="col">Product</th>
                         <th scope="col"></th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">Package qty.</th>
                         <th scope="col">Remove</th>
                     </TableHeading>
                 </thead>
@@ -74,9 +74,10 @@ const Cart = () => {
             </div>
 
             <OutboundLink href={checkout.webUrl}>
-                <CheckoutButton className="btn btn-success" 
-                                disabled={checkout.lineItems.length === 0}
-                                isMobileDevice={isMobileDevice}>
+                <CheckoutButton className="btn btn-success"
+                    disabled={checkout.lineItems.length === 0}
+                    // @ts-ignore
+                    isMobileDevice={isMobileDevice}>
                     Check out
                 </CheckoutButton>
             </OutboundLink>

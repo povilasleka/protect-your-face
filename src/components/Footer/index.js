@@ -16,17 +16,20 @@ const Footer = () => {
             <footer className="site-footer">
                 <div className="container">
                     <div className="row mt-4">
-                        <div className="col-md-2 col-sm-12 my-auto">
-                        <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{ intl.formatMessage({ id: 'securePaymentLabel' }) }</p>
+                        <div className="col-md-8 col-sm-12">
+                            <p style={{ fontWeight: 'bold', fontSize: '1.1rem', display: 'inline', padding: '0 1rem 0 0' }}>{intl.formatMessage({ id: 'securePaymentLabel' })}</p>
+                            {' '}<img src={visa} width="55px" style={{ marginRight: '.4rem' }} alt="Visa card" />
+                            <img src={mastercard} width="55px" style={{ marginRight: '.4rem' }} alt="Mastercard" />
+                            <img src={maestro} width="55px" style={{ marginRight: '.4rem' }} alt="Maestro card" />
+                            <img src={amex} width="55px" style={{ marginRight: '.4rem' }} alt="Amex card" />
                         </div>
-                        <div className="col-md-10 col-sm-12 my-auto">
-                            <img src={visa} width="55px" style={{ marginRight: '.4rem' }} alt="Visa card"/>
-                            <img src={mastercard} width="55px" style={{ marginRight: '.4rem' }} alt="Mastercard"/>
-                            <img src={maestro} width="55px" style={{ marginRight: '.4rem' }} alt="Maestro card"/>
-                            <img src={amex} width="55px" style={{ marginRight: '.4rem' }} alt="Amex card"/>
+                        <div className="col-md-4 col-sm-12">
+                            <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>Contact</p>
+                            <p>Minties str. 9 Vilnius, Lithuania.<br />
+                            Email: info@shielf4face.com</p>
                         </div>
                     </div>
-                    <hr style={{ background: 'white' }}/>
+                    <hr style={{ background: 'white' }} />
                     <div className="row mb-4">
                         <div className="col-md-12 col-sm-12">
                             <p className="copyright-text">
